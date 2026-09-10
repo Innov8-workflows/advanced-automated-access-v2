@@ -846,6 +846,10 @@ form{background:var(--card);border:1px solid var(--card-line);border-radius:var(
 .sch-more{padding:4px 16px 10px;font-size:12px;color:#8B9598}
 /* the page behind must not scroll while the panel is open */
 html.sch-open,html.sch-open body{overflow:hidden}
+/* The nav gained an eighth item (FAQs) and overflowed by 14px between 1025px
+   and 1039px. Every page now has a burger and drawer, so the burger takes over
+   15px earlier rather than the links being squeezed. */
+@media(max-width:1039px){.nav-links{display:none}.burger{display:flex}}
 @media(max-width:560px){.sch-box{margin-top:0;width:100vw;height:100%;border-radius:0}.sch-body{max-height:calc(100% - 64px)}}
 
 /* ---- build-out additions. Layout only; colour stays with the direction. ---- */
@@ -873,6 +877,14 @@ html.sch-open,html.sch-open body{overflow:hidden}
 .accred-logos{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
 .accred-logos img{height:46px;width:auto;background:#fff;border-radius:6px;padding:6px 8px}
 .accred p{margin:0;font-size:12.5px}
+/* the onward link under an FAQ answer */
+.faq-more{margin-top:6px}
+.faq-more a{font-size:13.4px;font-weight:600;color:var(--accent);text-decoration:none}
+.faq-more a:hover{text-decoration:underline}
+/* The nav gained an eighth item (FAQs) and overflowed by 14px between 1025px
+   and 1039px. Every page now has a burger and drawer, so the burger takes over
+   15px earlier rather than the links being squeezed. */
+@media(max-width:1039px){.nav-links{display:none}.burger{display:flex}}
 @media(max-width:860px){.suppliers{grid-template-columns:repeat(2,1fr)}}
 /* Contact page: the written address sits beside the map rather than above it. */
 .contactgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,3.5vw,44px);align-items:start;margin-top:8px}
