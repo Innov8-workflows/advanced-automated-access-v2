@@ -1,0 +1,1067 @@
+
+/* =========================================================
+   BRAND + GEOMETRY
+   Injected by build.js from the chosen art direction.
+   Never edit this block by hand - edit the direction file.
+   ========================================================= */
+:root{
+  /* --- palette: derived from the client logo --- */
+  --brand:#A82F48;        --brand-rgb:168,47,72;
+  --brand-lt:#DE6376;
+  --brand-dp:#8E2A40;
+  --brand2:#4E7A99;       --brand2-rgb:78,122,153;
+  --brand2-lt:#84AECA;
+  --brand2-dk:#2E5871;
+  --gold:#F5B62B;
+  --on-brand2:#FFFFFF;
+
+  /* --- dark ground --- */
+  --ink:#101315;          --ink-rgb:16,19,21;
+  --ink-1:#171B1E;
+  --ink-2:#212629;
+  --ink-deep:#08090B;     --ink-deep-rgb:8,9,11;
+
+  /* --- text on the dark ground --- */
+  --on-ink:#E9EEF0;
+  --on-ink-2:#CDD6DA;
+  --on-ink-muted:#93A0A6;
+  --on-ink-faint:#6F7C82;
+
+  /* --- text on always-white review cards --- */
+  --on-paper:#131A1D;
+  --on-paper-2:#3A464C;
+  --on-paper-muted:#5D6A70;
+  --on-paper-faint:#88949A;
+  --paper-line:#E9EDEF;
+  --star-muted:#AFB9BD;
+  --dot-idle:#BEC7CB;
+
+  /* --- the areas band --- */
+  --band-bg:#0C1013;
+  --band-g1:#141C21;
+  --band-g2:#1E1319;
+  --chip-core-bg:#2B151E;
+
+  /* --- hero rhythm: logo leads, headline supports (Redline / Fairmont) --- */
+  --hero-logo:clamp(250px,46vw,560px);
+  --hero-logo-sm:min(86vw,340px);
+  --hero-logo-gap:22px;
+  --hero-logo-gap-sm:14px;
+  --hero-h1:clamp(24px,4.1vw,41px);
+  --hero-sub:clamp(14px,2.1vw,16.5px);
+  /* The areas band scrim. Sits over .areas-bg, the section photograph, so every
+     layer stays translucent. The geometry matches the band gradient the section
+     used before it carried a picture, so the look is continuous. */
+  --areas-scrim:radial-gradient(72% 100% at 10% 50%,rgba(var(--brand-rgb),.34),transparent 62%),radial-gradient(72% 100% at 92% 42%,rgba(var(--brand2-rgb),.26),transparent 60%),linear-gradient(115deg,rgba(var(--ink-rgb),.90) 0%,rgba(var(--ink-deep-rgb),.74) 50%,rgba(var(--ink-rgb),.82) 100%);
+  /* Stacked below 860px the copy runs the full width, so darken evenly. */
+  --areas-scrim-sm:radial-gradient(90% 60% at 20% 20%,rgba(var(--brand-rgb),.30),transparent 64%),linear-gradient(180deg,rgba(var(--ink-rgb),.90) 0%,rgba(var(--ink-deep-rgb),.84) 58%,rgba(var(--ink-rgb),.88) 100%);
+  --cta-scrim:linear-gradient(135deg,rgba(var(--brand-rgb),.55),rgba(var(--ink-rgb),.68) 52%,rgba(var(--brand2-rgb),.5)),rgba(var(--ink-rgb),.34);
+
+  /* --- type --- */
+  --font-display:"Space Grotesk",Inter,system-ui,sans-serif;
+  --font-body:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+
+  /* --- geometry: the crispest of the four --- */
+  --r:6px;
+  --r-lg:10px;
+  --wrap:1160px;
+  --pad:clamp(18px,3.8vw,38px);
+  --sec:clamp(46px,6.4vw,88px);
+}
+
+.s-light{
+  --bg:#FFFFFF;
+  --fg:var(--on-paper);
+  --fg-2:var(--on-paper-2);
+  --fg-muted:var(--on-paper-muted);
+  --card:#F6F8F9;
+  --card-hi:#FFFFFF;
+  --card-line:#DFE5E8;
+  --card-line-hi:#B9C3C8;
+  --accent:var(--brand-dp);
+  --accent-2:var(--brand2-dk);
+  --chip:#EFF3F4;
+  --sh:0 2px 6px rgba(19,26,29,.06);
+  --sh-lg:0 8px 22px rgba(19,26,29,.11);
+  --ghost-line:#BAC4C9;
+}
+.s-tint{
+  --bg:#F3F6F7;
+  --fg:var(--on-paper);
+  --fg-2:var(--on-paper-2);
+  --fg-muted:var(--on-paper-muted);
+  --card:#FFFFFF;
+  --card-hi:#FFFFFF;
+  --card-line:#DCE3E6;
+  --card-line-hi:#B4BFC5;
+  --accent:var(--brand-dp);
+  --accent-2:var(--brand2-dk);
+  --chip:#FFFFFF;
+  --sh:0 2px 6px rgba(19,26,29,.06);
+  --sh-lg:0 8px 22px rgba(19,26,29,.11);
+  --ghost-line:#B0BBC1;
+}
+.s-dark{
+  --bg:var(--ink);
+  --fg:var(--on-ink);
+  --fg-2:var(--on-ink-2);
+  --fg-muted:var(--on-ink-muted);
+  --card:var(--ink-1);
+  --card-hi:var(--ink-2);
+  --card-line:rgba(255,255,255,.10);
+  --card-line-hi:rgba(255,255,255,.24);
+  --accent:var(--brand-lt);
+  --accent-2:var(--brand2-lt);
+  --chip:var(--ink-2);
+  --sh:0 3px 10px rgba(0,0,0,.42);
+  --sh-lg:0 10px 26px rgba(0,0,0,.48);
+  --ghost-line:rgba(255,255,255,.26);
+}
+.s-brand{
+  --bg:#101B1D;
+  --fg:#EAF1F2;
+  --fg-2:#CCD9DB;
+  --fg-muted:#9FAEB1;
+  --card:rgba(255,255,255,.05);
+  --card-hi:rgba(255,255,255,.09);
+  --card-line:rgba(255,255,255,.13);
+  --card-line-hi:var(--brand-lt);
+  --accent:var(--brand-lt);
+  --accent-2:var(--brand2-lt);
+  --chip:rgba(255,255,255,.06);
+  --sh:0 3px 10px rgba(0,0,0,.42);
+  --sh-lg:0 10px 26px rgba(0,0,0,.48);
+  --ghost-line:rgba(255,255,255,.26);
+}
+
+/* SURFACES: supplied by the art direction, spliced in above. */
+
+/* =========================================================
+   BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:#FFFFFF;color:var(--on-paper);
+  font-family:var(--font-body);
+  font-size:16px;line-height:1.62;letter-spacing:.005em;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.06;letter-spacing:-.015em;margin:0}
+p{margin:0}
+
+section,footer{background:var(--bg);color:var(--fg)}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+.sec{padding-block:var(--sec)}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-display);font-weight:700;font-size:12px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);border-radius:2px}
+h2.title{font-size:clamp(28px,5.2vw,46px);color:var(--fg)}
+.lede{color:var(--fg-muted);margin-top:14px;max-width:62ch;font-size:clamp(15px,2.4vw,17px)}
+.center{text-align:center}
+.center .lede{margin-inline:auto}
+.center .eyebrow{justify-content:center}
+.ph{
+  display:inline-block;font-family:var(--font-display);font-weight:700;font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--gold);
+  padding:2px 7px;border-radius:5px;vertical-align:middle;
+}
+.logo-mark{background-size:contain;background-repeat:no-repeat;background-position:center;display:block;flex:0 0 auto}
+/* the logo wordmark is white, so on light surfaces it sits on its own dark tile */
+.logo-tile{background-color:var(--ink);background-origin:content-box;padding:8px;border-radius:12px}
+.icon{width:22px;height:22px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.02em;
+  padding:13px 22px;border-radius:100px;transition:.22s ease;white-space:nowrap;
+  min-height:48px;
+}
+.btn .icon{width:18px;height:18px}
+.btn-primary{background-color:var(--brand-dp);background-image:linear-gradient(135deg,var(--brand) 0%,var(--brand-dp) 100%);color:#fff;box-shadow:0 10px 26px rgba(var(--brand-rgb),.34)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(var(--brand-rgb),.44)}
+.btn-cyan{background:var(--brand2);color:var(--on-brand2);box-shadow:0 10px 26px rgba(var(--brand2-rgb),.28)}
+.btn-cyan:hover{transform:translateY(-2px);background:var(--brand2-lt)}
+.btn-ghost{border:1.5px solid var(--ghost-line);color:var(--fg);background:transparent}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.s-dark .btn-ghost,.s-brand .btn-ghost,.hero .btn-ghost{backdrop-filter:blur(6px);background:rgba(var(--ink-rgb),.32)}
+.btn-block{width:100%}
+
+/* =========================================================
+   NAV  (stays dark in both states, over light and dark alike)
+   ========================================================= */
+.nav{position:fixed;inset:0 0 auto 0;z-index:120;transition:.3s ease;color:var(--on-ink)}
+.nav-in{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;height:74px;
+  width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad);
+}
+.nav::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--ink-rgb),.86),rgba(var(--ink-rgb),0));transition:.3s}
+.nav.solid::before{background:rgba(var(--ink-rgb),.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.10);box-shadow:0 6px 26px rgba(var(--ink-rgb),.20)}
+.nav-in>*{position:relative}
+.brand{display:flex;align-items:center;gap:11px;flex:0 0 auto;padding-block:6px}
+.brand .logo-mark{width:42px;height:42px}
+.brand-txt{display:flex;flex-direction:column;line-height:1.05}
+.brand-txt b{font-family:var(--font-display);font-weight:800;font-size:15px;letter-spacing:.01em}
+.brand-txt span{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--brand2);font-weight:600}
+.nav-links{display:flex;gap:26px;margin-inline:auto}
+.nav-links a{font-size:14px;font-weight:500;color:var(--on-ink-muted);transition:.2s;position:relative;padding-block:6px}
+.nav-links a:hover{color:var(--on-ink)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--brand2);transition:.25s;border-radius:2px}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.nav-call{
+  display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:100px;
+  background-color:var(--brand-dp);background-image:linear-gradient(135deg,var(--brand) 0%,var(--brand-dp) 100%);color:#fff;
+  font-family:var(--font-display);font-weight:700;font-size:14.5px;box-shadow:0 8px 22px rgba(var(--brand-rgb),.3);
+  transition:.22s;min-height:44px;
+}
+.nav-call:hover{transform:translateY(-2px)}
+.burger{display:none;width:46px;height:46px;border-radius:12px;border:1px solid rgba(255,255,255,.18);align-items:center;justify-content:center;background:rgba(255,255,255,.06);color:var(--on-ink)}
+.drawer{
+  position:fixed;inset:0;z-index:130;background:rgba(var(--ink-deep-rgb),.97);backdrop-filter:blur(10px);
+  display:flex;flex-direction:column;padding:22px var(--pad) 30px;color:var(--on-ink);
+  transform:translateY(-102%);visibility:hidden;
+  transition:transform .38s cubic-bezier(.4,0,.2,1),visibility 0s .38s;
+}
+.drawer.open{transform:translateY(0);visibility:visible;transition-delay:0s}
+.drawer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.drawer nav{display:flex;flex-direction:column;gap:2px}
+.drawer nav a{
+  font-family:var(--font-display);font-weight:700;font-size:23px;padding:13px 0;
+  border-bottom:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:space-between;color:var(--on-ink);
+}
+.drawer nav a .icon{width:18px;height:18px;color:var(--brand-lt)}
+.drawer-foot{margin-top:auto;padding-top:24px;display:grid;gap:10px}
+.drawer .btn-ghost{border-color:rgba(255,255,255,.24);color:var(--on-ink);background:rgba(255,255,255,.04)}
+.drawer .btn-ghost:hover{border-color:var(--brand-lt);color:var(--brand-lt)}
+
+/* =========================================================
+   HERO  (always dark)
+   ========================================================= */
+.hero{position:relative;min-height:min(96svh,880px);display:flex;align-items:center;overflow:hidden;isolation:isolate;background:var(--ink-deep)}
+.hero-media{position:absolute;inset:0;z-index:-2;background:var(--ink-deep)}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s ease;transform:scale(1.06)}
+.hero-slide.on{opacity:1;animation:kb 15s ease-out forwards}
+@keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.13)}}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-scrim{position:absolute;inset:0;z-index:-1;
+  background:
+   linear-gradient(180deg,rgba(var(--ink-rgb),.80) 0%,rgba(var(--ink-rgb),.46) 34%,rgba(var(--ink-rgb),.72) 74%,var(--ink) 100%),
+   radial-gradient(120% 80% at 50% 40%,rgba(var(--brand2-rgb),.10),transparent 60%);
+}
+.hero-in{width:100%;max-width:var(--wrap);margin-inline:auto;padding:120px var(--pad) 92px;text-align:center}
+.hero-logo{width:var(--hero-logo);aspect-ratio:1/1;margin:0 auto var(--hero-logo-gap);filter:drop-shadow(0 10px 30px rgba(0,0,0,.55))}
+.hero h1{font-size:var(--hero-h1);text-wrap:balance;text-shadow:0 3px 26px rgba(0,0,0,.5);color:#fff}
+.hero h1 em{font-style:normal;color:var(--brand-lt)}
+.hero-sub{margin:16px auto 0;max-width:58ch;color:var(--on-ink-2);font-size:var(--hero-sub);text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.hero-strip{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.hero-chip{
+  display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:100px;
+  background:rgba(var(--ink-rgb),.5);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(8px);
+  font-size:12.5px;font-weight:600;color:var(--on-ink-2);
+}
+.hero-chip .icon{width:15px;height:15px;color:var(--brand2)}
+.hero .btn-ghost{color:var(--on-ink);border-color:rgba(255,255,255,.28)}
+.hero .btn-ghost:hover{border-color:var(--brand-lt);color:var(--brand-lt)}
+.hero-dots{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+.hero-dots button{width:26px;height:4px;border-radius:4px;background:rgba(255,255,255,.28);transition:.25s;padding:12px 0;box-sizing:content-box;background-clip:content-box}
+.hero-dots button.on{background:var(--brand2);width:38px;background-clip:content-box}
+
+/* =========================================================
+   TRUST STRIP  (dark band, bridges the hero into the light page)
+   ========================================================= */
+.trust{border-bottom:1px solid var(--card-line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--card-line)}
+.trust-item{background:var(--bg);padding:26px 18px;display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center}
+.trust-item .icon{width:26px;height:26px;color:var(--accent-2)}
+.trust-item b{font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--fg)}
+.trust-item b .ph{display:block;margin:5px auto 0;width:fit-content}
+.trust-item span{font-size:12.5px;color:var(--fg-muted);line-height:1.45}
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+.svc{
+  position:relative;background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);
+  padding:22px 20px 24px;overflow:hidden;transition:.26s ease;
+}
+.svc::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--brand),var(--brand2));transform:scaleX(0);transform-origin:left;transition:.3s}
+.svc:hover{border-color:var(--card-line-hi);transform:translateY(-3px);background:var(--card-hi);box-shadow:var(--sh)}
+.svc:hover::before{transform:scaleX(1)}
+.svc-ico{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px;
+  background-color:var(--chip);
+  background-image:linear-gradient(135deg,rgba(var(--brand-rgb),.20),rgba(var(--brand2-rgb),.13));
+  border:1px solid var(--card-line);color:var(--accent);
+}
+.svc-ico .icon{width:22px;height:22px}
+.svc h3{font-size:17.5px;margin-bottom:8px;color:var(--fg)}
+.svc p{font-size:14px;color:var(--fg-muted);line-height:1.6}
+
+/* =========================================================
+   TRANSFORMATIONS  (dark showpiece)
+   ========================================================= */
+.trans{
+  background-color:var(--ink);
+  background-image:
+    radial-gradient(90% 60% at 50% 0%,rgba(var(--brand2-rgb),.10),transparent 62%),
+    radial-gradient(80% 55% at 50% 100%,rgba(var(--brand-rgb),.11),transparent 60%);
+}
+.zig{display:grid;gap:clamp(40px,6vw,76px);margin-top:44px}
+.zig-row{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,52px);align-items:center}
+.zig-row:nth-child(even) .zig-media{order:2}
+.zig-row:nth-child(even) .zig-copy{order:1}
+.zig-copy .num{
+  font-family:var(--font-display);font-weight:800;font-size:13px;letter-spacing:.14em;
+  color:var(--accent);display:block;margin-bottom:10px;
+}
+.zig-copy h3{font-size:clamp(21px,3.4vw,30px);margin-bottom:12px;color:var(--fg)}
+.zig-copy p{color:var(--fg-muted);font-size:15px}
+.zig-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.zig-tags span{
+  font-size:12px;font-weight:600;padding:6px 12px;border-radius:100px;
+  background:var(--chip);border:1px solid var(--card-line);color:var(--fg-muted);
+}
+.zig-media{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--card-line-hi);box-shadow:var(--sh-lg);background:#000}
+.zig-media video{width:100%;height:auto;display:block;aspect-ratio:4/5;object-fit:cover;background:#000}
+
+/* before / after slider */
+.ba{position:relative;aspect-ratio:4/5;overflow:hidden;touch-action:pan-y;user-select:none;cursor:ew-resize;--pos:50%}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .after-wrap{position:absolute;inset:0;clip-path:inset(0 0 0 var(--pos))}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.35),0 0 22px rgba(0,0,0,.45);pointer-events:none}
+.ba-knob{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:46px;height:46px;border-radius:50%;background:#fff;color:var(--on-paper);
+  display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.45);
+}
+.ba-knob svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ba-lbl{
+  position:absolute;top:12px;padding:5px 12px;border-radius:100px;font-family:var(--font-display);
+  font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;pointer-events:none;
+  background:rgba(var(--ink-rgb),.72);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px);
+}
+.ba-lbl.b{left:12px;color:#fff}
+.ba-lbl.a{right:12px;color:var(--brand2-lt)}
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:38px}
+.gal figure{margin:0;position:relative;overflow:hidden;border-radius:12px;aspect-ratio:1/1;background:var(--card);cursor:zoom-in;box-shadow:var(--sh)}
+.gal figure.big{grid-column:span 2;grid-row:span 2}
+.gal figure.more{display:none}
+.gal figcaption{display:none}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.gal figure:hover img{transform:scale(1.07)}
+.gal figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(var(--ink-rgb),.5));opacity:0;transition:.3s}
+.gal figure:hover::after{opacity:1}
+
+
+/* lightbox (always dark) */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(var(--ink-deep-rgb),.95);display:none;align-items:center;justify-content:center;padding:20px;color:var(--on-ink)}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:88vh;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.55)}
+.lb-close{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);display:grid;place-items:center}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);display:grid;place-items:center}
+.lb-nav.prev{left:14px}.lb-nav.next{right:14px}
+
+/* =========================================================
+   WHY CHOOSE US
+   ========================================================= */
+.why{border-block:1px solid var(--card-line)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+.why-card{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);padding:22px 20px;transition:.24s}
+.why-card:hover{border-color:var(--card-line-hi);background:var(--card-hi);box-shadow:var(--sh)}
+.why-card .icon{width:24px;height:24px;color:var(--accent-2);margin-bottom:12px}
+.why-card h3{font-size:16.5px;margin-bottom:7px;color:var(--fg)}
+.why-card p{font-size:13.8px;color:var(--fg-muted);line-height:1.58}
+
+/* =========================================================
+   REVIEWS
+   ========================================================= */
+.rev-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.rev-score{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);padding:14px 18px;box-shadow:var(--sh)}
+.rev-score b{font-family:var(--font-display);font-size:34px;font-weight:800;line-height:1}
+.rev-score small{display:block;font-size:11.5px;color:var(--fg-muted);margin-top:4px}
+.stars{display:inline-flex;gap:2px;color:var(--gold)}
+.stars svg{width:16px;height:16px;fill:currentColor}
+.stars.muted{color:var(--star-muted)}
+.rev-view{overflow:hidden;margin-top:34px}
+.rev-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.rev-cell{flex:0 0 33.3333%;padding:6px 7px 14px;display:flex}
+.rev-card{
+  background:#fff;border:1px solid var(--card-line);border-radius:var(--r);padding:22px 20px;width:100%;
+  display:flex;flex-direction:column;gap:12px;box-shadow:var(--sh);
+}
+.rev-top{display:flex;align-items:center;gap:12px}
+.rev-av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:18px;color:#fff;flex:0 0 auto}
+.rev-who b{display:block;font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--on-paper)}
+.rev-who span{font-size:12px;color:var(--on-paper-muted)}
+.rev-card p{font-size:14.2px;color:var(--on-paper-2);line-height:1.62;flex:1}
+.rev-foot{font-size:11.5px;color:var(--on-paper-muted);border-top:1px solid var(--paper-line);padding-top:11px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.rev-ctl{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px}
+.rev-arrow{width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--card-line);display:grid;place-items:center;color:var(--on-paper);transition:.22s;box-shadow:var(--sh)}
+.rev-arrow:hover{background:var(--brand-dp);color:#fff;border-color:var(--brand-dp)}
+.rev-pages{display:flex;gap:0}
+.rev-pages button{width:9px;height:9px;border-radius:50%;background:var(--dot-idle);transition:.22s;padding:14px 6px;box-sizing:content-box;background-clip:content-box}
+.rev-pages button.on{background:var(--brand-dp);width:26px;border-radius:6px;background-clip:content-box}
+
+/* review platform links */
+.rev-plat{margin-top:26px;text-align:center}
+.rev-plat-lede{font-size:13.5px;color:var(--fg-muted);margin-bottom:14px}
+.plat-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.plat{
+  display:inline-flex;align-items:center;gap:11px;padding:12px 20px 12px 16px;border-radius:12px;
+  background:#fff;border:1px solid var(--card-line);box-shadow:var(--sh);
+  transition:.22s ease;min-height:56px;text-align:left;
+}
+.plat:hover{transform:translateY(-2px);box-shadow:var(--sh-lg);border-color:var(--card-line-hi)}
+.plat-logo{width:26px;height:26px;flex:0 0 auto;display:grid;place-items:center}
+.plat-logo svg{width:100%;height:100%;display:block}
+.plat-txt{display:flex;flex-direction:column;line-height:1.2}
+.plat-txt b{font-family:var(--font-display);font-weight:700;font-size:14.5px;color:var(--on-paper)}
+.plat-txt span{font-size:11.5px;color:var(--on-paper-muted)}
+.plat .go{width:16px;height:16px;color:var(--on-paper-faint);margin-left:2px;flex:0 0 auto}
+.plat:hover .go{color:var(--brand-dp)}
+/* each platform keeps its own brand accent on the left edge */
+.plat-google{box-shadow:inset 3px 0 0 #4285F4,var(--sh)}
+.plat-google:hover{box-shadow:inset 3px 0 0 #4285F4,var(--sh-lg)}
+.plat-fb{box-shadow:inset 3px 0 0 #1877F2,var(--sh)}
+.plat-fb:hover{box-shadow:inset 3px 0 0 #1877F2,var(--sh-lg)}
+.plat-cat{box-shadow:inset 3px 0 0 #16357A,var(--sh)}
+.plat-cat:hover{box-shadow:inset 3px 0 0 #16357A,var(--sh-lg)}
+
+/* =========================================================
+   OUR WORK  (full-screen panel opened from Recent Projects)
+   ========================================================= */
+.work-cta{margin-top:26px;text-align:center}
+.work-count{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  font-size:12.5px;font-weight:600;color:var(--fg-muted);margin-top:12px;
+}
+.work{
+  position:fixed;inset:0;z-index:160;background:var(--ink);color:var(--on-ink);
+  display:flex;flex-direction:column;
+  transform:translateY(100%);visibility:hidden;
+  transition:transform .42s cubic-bezier(.4,0,.2,1),visibility .42s;
+}
+.work.open{transform:translateY(0);visibility:visible}
+@media(prefers-reduced-motion:reduce){.work{transition:none}}
+.work-top{
+  flex:0 0 auto;background:rgba(var(--ink-rgb),.97);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.work-top-in{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  width:100%;max-width:1360px;margin-inline:auto;padding:14px var(--pad);
+}
+.work-id{display:flex;align-items:center;gap:12px}
+.work-id .logo-mark{width:40px;height:40px}
+.work-id b{font-family:var(--font-display);font-weight:800;font-size:19px;display:block;line-height:1.1}
+.work-id span{font-size:12.5px;color:var(--on-ink-muted)}
+.work-close{
+  display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:100px;
+  border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:var(--on-ink);
+  font-family:var(--font-display);font-weight:700;font-size:14px;transition:.22s;min-height:46px;
+}
+.work-close:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.work-close .icon{width:17px;height:17px}
+.work-body{flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:22px var(--pad) 48px}
+.work-grid{
+  width:100%;max-width:1360px;margin-inline:auto;
+  column-count:4;column-gap:12px;
+}
+.work-grid figure{margin:0 0 12px;break-inside:avoid;position:relative;overflow:hidden;border-radius:12px;background:var(--ink-1);cursor:zoom-in}
+.work-grid img{width:100%;height:auto;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.work-grid figure:hover img{transform:scale(1.05)}
+.work-grid figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;
+  font-size:12.5px;font-weight:600;color:#fff;
+  background:linear-gradient(180deg,transparent,rgba(var(--ink-rgb),.82));
+  opacity:0;transition:.28s;
+}
+.work-grid figure:hover figcaption{opacity:1}
+.work-foot{
+  max-width:1360px;margin:26px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.10);
+  display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(26px,4.5vw,60px);align-items:center}
+.about-media{position:relative}
+.about-media .main{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--card-line);box-shadow:var(--sh-lg);aspect-ratio:4/3}
+.about-media .main img{width:100%;height:100%;object-fit:cover}
+.about-media .inset{
+  position:absolute;right:-14px;bottom:-24px;width:44%;border-radius:var(--r);overflow:hidden;
+  border:4px solid var(--bg);box-shadow:var(--sh-lg);aspect-ratio:4/3;
+}
+.about-media .inset img{width:100%;height:100%;object-fit:cover}
+.about-copy h2{font-size:clamp(26px,4.4vw,40px);color:var(--fg)}
+.about-copy p{color:var(--fg-muted);margin-top:14px;font-size:15.2px}
+.about-sign{display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid var(--card-line)}
+.about-sign .logo-mark{width:52px;height:52px}
+.about-sign b{font-family:var(--font-display);font-weight:800;font-size:16px;display:block;color:var(--fg)}
+.about-sign span{font-size:12.5px;color:var(--fg-muted)}
+
+/* =========================================================
+   AREAS  (photograph behind a brand-coloured wash)
+   =========================================================
+   A .areas-bg div supplies the picture and .areas-scrim the wash, exactly the
+   way .cta-bg / .cta-scrim work at the foot of the page.
+
+   isolation:isolate makes .areas a stacking context, so a z-index:-2 child
+   paints ABOVE the section's own background-image but below the content. That
+   is what makes the gradient below a real fallback rather than dead weight: a
+   body.html with no .areas-bg still renders the original flat band, unchanged,
+   and there is nothing to switch off with :has() or a modifier class. */
+.areas{
+  position:relative;overflow:hidden;isolation:isolate;
+  background-color:var(--band-bg);
+  background-image:
+    radial-gradient(72% 100% at 10% 50%,rgba(var(--brand-rgb),.26),transparent 62%),
+    radial-gradient(72% 100% at 92% 42%,rgba(var(--brand2-rgb),.20),transparent 60%),
+    linear-gradient(135deg,var(--band-g1) 0%,var(--ink) 52%,var(--band-g2) 100%);
+}
+.areas-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center}
+.areas-scrim{position:absolute;inset:0;z-index:-1;background:var(--areas-scrim)}
+.area-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(26px,4.5vw,56px);align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:100px;
+  background:var(--chip);border:1px solid var(--card-line);font-size:13.5px;font-weight:600;
+  color:var(--fg-2);transition:.22s;
+}
+.chip .icon{width:15px;height:15px;color:var(--accent-2)}
+.chip.core{background-color:var(--chip-core-bg);background-image:linear-gradient(135deg,rgba(var(--brand-rgb),.34),rgba(var(--brand2-rgb),.20));border-color:var(--brand-lt);color:#fff}
+.chip.ph-chip{border-style:dashed}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.form-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(26px,4.5vw,56px);align-items:start;margin-top:38px}
+.contact-list{display:grid;gap:12px}
+.contact-row{
+  display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--card-line);
+  border-radius:var(--r);padding:16px 18px;transition:.22s;
+}
+.contact-row:hover{border-color:var(--card-line-hi);box-shadow:var(--sh)}
+.contact-row .icon{width:20px;height:20px;color:var(--accent-2);margin-top:3px}
+.contact-row small{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-muted);font-weight:600}
+.contact-row b{font-family:var(--font-display);font-weight:700;font-size:15.5px;overflow-wrap:anywhere;line-height:1.35;color:var(--fg)}
+form{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r-lg);padding:clamp(20px,3.4vw,32px);box-shadow:var(--sh)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.field{display:block;margin-bottom:14px}
+.field span{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-muted);margin-bottom:7px}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--bg);border:1px solid var(--card-line-hi);border-radius:11px;
+  padding:13px 15px;color:var(--fg);font:inherit;font-size:15px;transition:.2s;min-height:50px;
+}
+.field textarea{min-height:112px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:var(--fg-muted);opacity:.8}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brand-dp);box-shadow:0 0 0 3px rgba(var(--brand-rgb),.20)}
+.field select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235C6659' stroke-width='2' stroke-linecap='round'><path d='m6 9 6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:42px}
+.form-note{font-size:12.5px;color:var(--fg-muted);margin-top:12px;text-align:center}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+.cta{position:relative;overflow:hidden;isolation:isolate;text-align:center;background:var(--ink)}
+.cta-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center}
+.cta-scrim{position:absolute;inset:0;z-index:-1;background:var(--cta-scrim)}
+.cta h2{font-size:clamp(27px,5.2vw,48px);text-wrap:balance;color:#fff}
+.cta p{color:var(--on-ink-2);margin:14px auto 0;max-width:56ch;font-size:clamp(15px,2.4vw,17px)}
+.cta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.cta .btn-ghost:hover{border-color:#fff;color:#fff;background:rgba(255,255,255,.12)}
+
+/* =========================================================
+   FOOTER  (always dark)
+   ========================================================= */
+.foot{background:var(--ink-deep);color:var(--on-ink);border-top:1px solid rgba(255,255,255,.10);padding-block:clamp(38px,5vw,58px) 0}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:32px}
+.foot-brand .logo-mark{width:64px;height:64px;margin-bottom:14px}
+.foot p{font-size:13.6px;color:var(--on-ink-muted);line-height:1.62}
+.foot h4{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--brand2);margin-bottom:14px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.foot ul a,.foot ul li{font-size:13.6px;color:var(--on-ink-muted);transition:.2s}
+.foot ul a:hover{color:var(--brand-lt)}
+.socials{display:flex;gap:10px;margin-top:16px}
+.socials a{width:42px;height:42px;border-radius:11px;background:var(--ink-2);border:1px solid rgba(255,255,255,.10);display:grid;place-items:center;transition:.22s;color:var(--on-ink-muted)}
+.socials a:hover{background:var(--brand);border-color:var(--brand);color:#fff;transform:translateY(-2px)}
+.socials svg{width:19px;height:19px;fill:currentColor}
+.accred{margin-top:20px;padding:14px 16px;border:1px dashed rgba(255,255,255,.20);border-radius:var(--r);font-size:12.5px;color:var(--on-ink-muted)}
+.foot-bar{margin-top:clamp(30px,4vw,46px);border-top:1px solid rgba(255,255,255,.10);padding-block:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.foot-bar small{font-size:12.4px;color:var(--on-ink-faint)}
+.foot-bar a{color:var(--brand-lt)}
+
+/* =========================================================
+   WHATSAPP FLOAT
+   ========================================================= */
+.wa{
+  position:fixed;right:16px;bottom:16px;z-index:150;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;color:#fff;
+  box-shadow:0 10px 30px rgba(37,211,102,.42);transition:.24s;
+}
+.wa:hover{transform:scale(1.07)}
+.wa svg{width:31px;height:31px;fill:currentColor}
+.wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}70%{transform:scale(1.5);opacity:0}100%{opacity:0}}
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+
+/* The .ph badge must win over any (0,2,0) descendant colour rule above,
+   e.g. .trust-item span or .about-sign span. Equal specificity, declared
+   later, so source order decides. */
+.ph.ph{color:var(--ink);background-color:var(--gold)}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media(max-width:1024px){
+  .work-grid{column-count:3}
+  .nav-links{display:none}
+  .burger{display:flex}
+  .svc-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+  .rev-cell{flex-basis:50%}
+}
+@media(max-width:860px){
+  .work-grid{column-count:2}
+  .zig-row{grid-template-columns:1fr;gap:20px}
+  .zig-row .zig-media{order:2 !important}
+  .zig-row .zig-copy{order:1 !important}
+  .about-grid,.area-wrap,.form-grid{grid-template-columns:1fr}
+  /* .area-wrap collapses here, so the areas copy now runs the full width of the
+     photograph rather than sitting down its left side. The scrim has to darken
+     evenly or the headline lands on the bright part of the picture. */
+  .areas-scrim{background:var(--areas-scrim-sm)}
+  .about-media .inset{position:static;width:100%;margin-top:12px;border-width:0;aspect-ratio:16/9}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+  :root{--sec:34px;--pad:16px}
+  body{font-size:15.5px;line-height:1.58}
+  h2.title{font-size:clamp(24px,6.4vw,30px)}
+  .lede{font-size:14.2px;margin-top:9px;max-width:38ch}
+  .eyebrow{font-size:11px;margin-bottom:10px}
+  .nav-in{height:64px}
+  .nav-call{padding:9px 14px;font-size:13.5px}
+  .nav-call .lbl{display:none}
+  .brand .logo-mark{width:36px;height:36px}
+  .brand-txt b{font-size:13.5px}
+  .brand-txt span{font-size:9px}
+  .hero{min-height:auto}
+  .hero-in{padding:88px var(--pad) 52px}
+  .hero-logo{width:var(--hero-logo-sm);margin-bottom:var(--hero-logo-gap-sm)}
+  .hero-sub{font-size:14.8px;max-width:40ch;margin-top:12px}
+  .hero-btns{gap:9px;margin-top:22px}
+  .hero-btns .btn{flex:1 1 45%;padding:12px 10px;font-size:14px}
+  .hero-strip{gap:7px;margin-top:18px}
+  .hero-chip{font-size:11.4px;padding:6px 11px}
+  .hero-chip.opt{display:none}
+  .svc{padding:15px 14px 17px;border-radius:12px}
+  .svc-ico{width:36px;height:36px;border-radius:10px;margin-bottom:9px}
+  .svc-ico .icon{width:18px;height:18px}
+  .svc h3{font-size:14.8px;line-height:1.16;margin-bottom:5px}
+  .svc p{font-size:12.6px;line-height:1.48}
+  .svc-grid{gap:9px;margin-top:22px}
+  .zig{gap:30px;margin-top:24px}
+  .zig-copy h3{font-size:19.5px;margin-bottom:8px}
+  .zig-copy p{font-size:14px}
+  .zig-tags{margin-top:12px;gap:6px}
+  .zig-tags span:nth-child(n+4){display:none}
+  .zig-tags span{font-size:11.4px;padding:5px 10px}
+  .ba,.zig-media video{aspect-ratio:1/1}
+  .zig-media{border-radius:14px}
+  .gal{grid-template-columns:repeat(2,1fr);gap:8px;margin-top:22px}
+  .gal figure.big{grid-column:span 2;grid-row:span 1;aspect-ratio:16/12}
+  .gal figure:nth-child(n+6){display:none}
+  .why-grid{gap:9px;margin-top:22px}
+  .why-card{padding:15px 14px;border-radius:12px}
+  .why-card h3{font-size:14.4px;margin-bottom:5px}
+  .why-card p{font-size:12.6px;line-height:1.48}
+  .why-card .icon{width:20px;height:20px;margin-bottom:8px}
+  .rev-cell{flex-basis:100%;padding:4px 3px 12px}
+  .rev-card{padding:18px 16px;gap:10px}
+  .rev-card p{font-size:13.6px}
+  .rev-view{margin-top:22px}
+  .rev-head{gap:14px}
+  .rev-score{padding:12px 15px;gap:11px}
+  .rev-score b{font-size:28px}
+  .chips{gap:7px}
+  .chip{padding:9px 13px;font-size:12.6px}
+  .plat-row{flex-direction:column;gap:9px}
+  .plat{width:100%;padding:11px 16px 11px 14px;min-height:54px}
+  .plat-txt{flex:1}
+  .rev-plat{margin-top:20px}
+  .work-grid{column-count:2;column-gap:8px}
+  .work-grid figure{margin-bottom:8px;border-radius:10px}
+  .work-grid figcaption{opacity:1;font-size:11px;padding:20px 10px 9px}
+  .work-top-in{padding:10px var(--pad)}
+  .work-id .logo-mark{width:34px;height:34px}
+  .work-id b{font-size:16px}
+  .work-id span{font-size:11px}
+  .work-close{padding:10px 14px;font-size:13px;min-height:44px}
+  .work-close .lbl{display:none}
+  .work-body{padding:14px var(--pad) 34px}
+  .work-cta{margin-top:20px}
+  .f2{gap:0 10px}
+  .field input,.field select{padding:12px 13px;font-size:14.5px;min-height:48px}
+  .field span{font-size:11px;margin-bottom:5px}
+  .field select{background-position:right 10px center;background-size:16px;padding-right:32px}
+  form{border-radius:16px}
+  .field{margin-bottom:12px}
+  .field textarea{min-height:92px}
+  .contact-row{padding:13px 15px}
+  .contact-row b{font-size:14.2px}
+  .contact-row.dupe{display:none}
+  .contact-list{gap:9px}
+  .foot-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 16px}
+  .foot-brand{grid-column:1 / -1}
+  .foot-grid>div:last-child{grid-column:1 / -1}
+  .foot ul{gap:0}
+  .foot ul li{padding-block:4px}
+  .foot ul a{display:inline-block;padding-block:4px}
+  .foot ul a,.foot ul li{font-size:12.8px}
+  .foot h4{font-size:12px;margin-bottom:10px}
+  .foot p{font-size:12.8px}
+  .accred{margin-top:14px;padding:11px 13px;font-size:11.8px}
+  .foot{padding-block:30px 0}
+  .socials{margin-top:12px}
+  .socials a{width:42px;height:42px}
+  .foot-bar{justify-content:center;text-align:center}
+  .wa{width:54px;height:54px;right:14px;bottom:14px}
+  .wa svg{width:28px;height:28px}
+  .trust-item{padding:14px 11px;gap:4px}
+  .trust-item b{font-size:13.2px}
+  .trust-item span{font-size:11.4px;line-height:1.38}
+  .trust-item .icon{width:21px;height:21px}
+  .about-copy p{font-size:14.2px;margin-top:11px}
+  .about-media .inset{display:none}
+  .about-media .main{aspect-ratio:16/10}
+  .about-sign{margin-top:18px;padding-top:16px}
+  .lb-nav{width:42px;height:42px}
+  .btn{font-size:14.4px;padding:12px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+  /* the hero still rotates, it just crossfades instead of panning and zooming */
+  .hero-slide{animation:none !important;transform:none !important;transition-duration:.8s !important}
+}
+
+
+/* Per-project geometry only. Colour and type stay with the art direction. */
+
+/* The AAA logo is a 2.5:1 lockup, not a square badge. The golden .hero-logo is
+   a 1:1 box, which would leave 40% of its height as dead transparent space and
+   push the headline down the fold. */
+.hero-logo{aspect-ratio:2.5/1}
+
+/* .zig-media is built around a 4/5 portrait video. These are architectural
+   elevations shot landscape - forcing them into 4/5 crops the building out. */
+.zig-shot{width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover}
+@media(max-width:680px){.zig-shot{aspect-ratio:4/3}}
+
+/* The float is an email float, not WhatsApp, so it takes the brand colour
+   rather than WhatsApp green. Real alpha, no blend modes. */
+.wa{background:var(--brand);box-shadow:0 10px 30px rgba(var(--brand-rgb),.42)}
+.wa svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.wa::after{border-color:var(--brand)}
+
+/* Hero video crossfade. The incoming clip is the one that fades, and it sits
+   strictly above the outgoing clip - never fade the outgoing one out, or the
+   background shows through the middle of the transition. */
+.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;z-index:0;transition:opacity 900ms ease-in-out;background:var(--ink-deep)}
+.hero-vid.under{opacity:1;z-index:1}
+.hero-vid.on{opacity:1;z-index:2}
+@media(prefers-reduced-motion:reduce){
+  /* Never display:none the hero - that reads as broken, not calm. The clip
+     stays on screen, it just does not play or cycle. */
+  .hero-vid{transition:none}
+}
+
+/* Accreditation marks in the footer. The source artwork is JPEG on white, so
+   on the dark footer they take a deliberate white plate rather than reading as
+   stray boxes. Brand marks keep their own colour, never tinted by the art
+   direction. NOTE: duplicated in buildout.js sharedCss(), because the homepage
+   uses its own inline <style> and never loads /assets/site.css. */
+.accred-logos{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.accred-logos img{height:44px;width:auto;background:#fff;border-radius:6px;padding:5px 7px}
+.accred p{margin:0;font-size:12.4px;line-height:1.55}
+/* Address sits in a contact row that is not a link, so it wraps as body text. */
+.contact-row .addr{font-weight:400;font-size:14px;line-height:1.5;display:block}
+
+/* .socials svg is filled, because the kit wrote it for solid brand marks.
+   The LinkedIn mark is solid so it is fine; a stroked Lucide mail icon in that
+   slot renders as a black rectangle, because the CSS fill beats the SVG
+   attribute. Hence the override below. */
+.socials a[data-track="email"] svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---- build-out additions. Layout only; colour stays with the direction. ---- */
+:root{--a-mark-webp:url("/advanced-automated-access-v2/media/brand-mark.webp");--a-logo-webp:url("/advanced-automated-access-v2/media/brand-logo.webp")}
+.crumb{font-size:12.5px;color:var(--fg-muted);padding:14px 0 0}
+.crumb a{color:var(--fg-muted);text-decoration:none}
+.crumb a:hover{color:var(--accent)}
+.crumb span{opacity:.5;padding:0 6px}
+/* Systems suppliers. Text tiles until the client sends logo artwork -
+   manufacturer marks are not something to fabricate or hotlink. */
+.suppliers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.suppliers div{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);padding:20px 16px;text-align:center;display:grid;place-items:center;min-height:88px}
+.suppliers b{font-family:var(--font-display);font-size:15px;color:var(--fg);line-height:1.3}
+/* Accreditation marks. The source artwork is JPEG on white, so on the dark
+   footer they get a deliberate white plate rather than reading as stray boxes.
+   Brand marks keep their own colour and are never tinted by the direction. */
+.accred-logos{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.accred-logos img{height:46px;width:auto;background:#fff;border-radius:6px;padding:6px 8px}
+.accred p{margin:0;font-size:12.5px}
+@media(max-width:860px){.suppliers{grid-template-columns:repeat(2,1fr)}}
+/* Contact page: the written address sits beside the map rather than above it. */
+.contactgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,3.5vw,44px);align-items:start;margin-top:8px}
+.contactgrid .prose{max-width:none}
+.mapwrap{position:relative;aspect-ratio:4/3;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--card-line);background:var(--card)}
+.mapwrap iframe{width:100%;height:100%;border:0;display:block}
+.mapload{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--card);border:0;cursor:pointer;color:var(--fg-muted);text-align:center;padding:24px;font:inherit}
+.mapload:hover{background:var(--card-hi);color:var(--fg)}
+.mapload svg{width:30px;height:30px;color:var(--accent)}
+.mapload b{font-family:var(--font-display);font-size:15.5px;color:var(--fg)}
+.mapload span{font-size:12.8px;max-width:24ch;line-height:1.45}
+@media(max-width:860px){.contactgrid{grid-template-columns:1fr}}
+/* Two-column shell for content pages.
+   Before this, .prose was capped at 74ch and left-aligned with no
+   margin-inline:auto, so text sat in a ~570px column inside a ~1084px
+   container while .tiles/.linkgrid/.shots ran full width beneath it. That
+   alternation is what read as a ragged right edge. The grid closes the gap and
+   buys a contact route on every content page, which none of them had above the
+   footer. Inside .pagemain the column sets the measure, so .prose drops its cap. */
+.pagegrid{display:grid;grid-template-columns:minmax(0,1fr) 296px;gap:clamp(28px,4vw,52px);align-items:start}
+.pagemain{min-width:0}
+.pagemain .prose{max-width:none}
+.pageside{position:sticky;top:96px;display:grid;gap:14px}
+.sidecard{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r-lg);padding:20px}
+.sidecard b{display:block;font-family:var(--font-display);font-size:16.5px;color:var(--fg);line-height:1.3}
+.sidecard p{margin-top:8px;font-size:13.6px;color:var(--fg-muted);line-height:1.6}
+.sidecard .btn{margin-top:14px}
+.sidecall{display:block;margin-top:12px;text-align:center;font-family:var(--font-display);font-weight:700;font-size:19px;color:var(--accent);text-decoration:none}
+.sidecall:hover{text-decoration:underline}
+.sidehours{display:block;margin-top:4px;text-align:center;font-size:12.4px;color:var(--fg-muted)}
+.sidelinks{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r-lg);padding:18px 20px}
+.sidelinks b{display:block;font-family:var(--font-display);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-muted);margin-bottom:6px}
+.sidelinks a{display:block;padding:8px 0;font-size:14px;color:var(--fg-2);text-decoration:none;border-top:1px solid var(--card-line);line-height:1.35}
+.sidelinks a:hover{color:var(--accent)}
+@media(max-width:1024px){
+  .pagegrid{grid-template-columns:1fr}
+  .pageside{position:static;margin-top:34px}
+}
+
+/* Pages without a sidebar still had the 74ch cap. 92ch is past the classic
+   readability limit but these are hub pages of links, not long prose. */
+.prose{max-width:92ch}
+.prose p{margin-top:14px;color:var(--fg-muted);font-size:15.4px;line-height:1.68}
+.prose h2{margin-top:38px;font-size:clamp(21px,3.2vw,28px);color:var(--fg)}
+.prose h3{margin-top:24px;font-size:17.5px;color:var(--fg)}
+.prose ul{margin:14px 0 0 20px;color:var(--fg-muted);font-size:15.2px;line-height:1.7}
+.prose li{margin-top:7px}
+.inshort{border-left:3px solid var(--accent);background:var(--card);padding:18px 22px;border-radius:var(--r);margin-top:18px}
+.inshort p{margin:0;color:var(--fg-2);font-size:15.8px;line-height:1.66}
+.spec{width:100%;border-collapse:collapse;margin-top:20px;font-size:14.6px}
+.spec th,.spec td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--card-line);vertical-align:top}
+.spec th{color:var(--fg-muted);font-weight:600;width:170px;white-space:nowrap}
+.spec td{color:var(--fg)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.tile{display:block;text-decoration:none;background:var(--card);border:1px solid var(--card-line);border-radius:var(--r-lg);overflow:hidden;transition:.24s}
+.tile:hover{border-color:var(--card-line-hi);transform:translateY(-3px);box-shadow:var(--sh)}
+.tile img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--ink-2)}
+.tile .tb{padding:14px 16px 16px}
+.tile b{display:block;font-family:var(--font-display);font-size:16px;color:var(--fg);line-height:1.25}
+.tile span{display:block;margin-top:6px;font-size:13px;color:var(--fg-muted);line-height:1.5}
+.linkgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:22px}
+.linkgrid a{display:block;padding:11px 14px;background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);font-size:13.6px;color:var(--fg-2);text-decoration:none;transition:.2s}
+.linkgrid a:hover{border-color:var(--accent);color:var(--fg)}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
+.shots figure{margin:0;border-radius:var(--r);overflow:hidden;background:var(--ink-2);aspect-ratio:4/3}
+.shots img{width:100%;height:100%;object-fit:cover;display:block}
+.faq{margin-top:14px;border-bottom:1px solid var(--card-line);padding-bottom:14px}
+.faq h3{font-size:16.5px;color:var(--fg);margin-top:18px}
+.faq p{margin-top:8px;color:var(--fg-muted);font-size:15px;line-height:1.66}
+.newsrow{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--card-line);text-decoration:none;align-items:flex-start}
+.newsrow img{width:132px;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);flex:0 0 auto;background:var(--ink-2)}
+.newsrow b{display:block;font-family:var(--font-display);font-size:16px;color:var(--fg);line-height:1.3}
+.newsrow small{display:block;margin-top:5px;font-size:12.4px;color:var(--fg-muted);letter-spacing:.05em;text-transform:uppercase}
+.newsrow p{margin-top:7px;font-size:14px;color:var(--fg-muted);line-height:1.6}
+.pagenav{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+.pagenav a,.pagenav span{padding:8px 13px;border-radius:var(--r);font-size:13.5px;text-decoration:none;border:1px solid var(--card-line);color:var(--fg-2)}
+.pagenav span{background:var(--accent);color:#fff;border-color:var(--accent)}
+.subnav{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.subnav a{font-size:13.4px;padding:8px 14px;border-radius:100px;border:1px solid var(--card-line);color:var(--fg-2);text-decoration:none}
+.subnav a:hover{border-color:var(--accent);color:var(--fg)}
+.cred{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+.cred div{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);padding:15px 16px}
+.cred b{display:block;font-family:var(--font-display);font-size:15px;color:var(--fg)}
+.cred span{display:block;margin-top:5px;font-size:12.8px;color:var(--fg-muted);line-height:1.5}
+@media(max-width:1024px){.tiles{grid-template-columns:repeat(2,1fr)}.linkgrid{grid-template-columns:repeat(3,1fr)}.cred{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){
+  .tiles{grid-template-columns:1fr}.linkgrid{grid-template-columns:repeat(2,1fr)}
+  .shots{grid-template-columns:repeat(2,1fr)}.cred{grid-template-columns:1fr}
+  .spec th{width:auto;display:block;border:0;padding-bottom:2px}
+  .spec td{display:block;padding-top:0}
+  .newsrow img{width:92px}
+}
+/* ============================================================
+   LIGHT VARIANT - project-scoped override layer
+   ============================================================
+   Built for Chris to put in front of Richard alongside the dark site.
+
+   This file touches NOTHING in ~/.claude/site-kit. It is appended after the kit
+   CSS, so equal-specificity rules win on cascade order alone. That is deliberate:
+   20+ live sites rebuild from that template and a light theme is not worth
+   risking them for.
+
+   The approach: the kit derives almost all of its dark chrome from the --ink and
+   --on-ink token families, so flipping those two families turns the navbar,
+   the mobile drawer, the footer and every .s-dark section light in one move.
+
+   What deliberately STAYS dark: the hero, the areas band and the final CTA. All
+   three sit over video or photography and carry white text, so a light scrim
+   would destroy their contrast. Keeping them dark also gives the page rhythm -
+   a light site with three dark media bands, rather than an undifferentiated
+   wash. Those scrims reference --ink-rgb, so each is pinned to a literal dark
+   value below or it would follow the flip and take the white text with it.
+
+   The new brand suits this better than the dark theme: #9A3246 scores 7.23:1 on
+   white against 2.58:1 on the dark ground.
+   ============================================================ */
+
+:root{
+  /* the ground flips light */
+  --ink:#F4F7F8;          --ink-rgb:244,247,248;
+  --ink-1:#FFFFFF;
+  --ink-2:#EAEFF1;
+  --ink-deep:#FFFFFF;     --ink-deep-rgb:255,255,255;
+
+  /* text that sits on the now-light chrome flips dark */
+  --on-ink:#131A1D;
+  --on-ink-2:#3A464C;
+  --on-ink-muted:#5A676D;
+  --on-ink-faint:#7E8A90;
+
+  /* --- pinned dark, because these sit over media and carry white text --- */
+  --cta-scrim:linear-gradient(135deg,rgba(168,47,72,.62),rgba(16,19,21,.72) 52%,rgba(46,88,113,.55)),rgba(16,19,21,.36);
+  --areas-scrim:radial-gradient(72% 100% at 10% 50%,rgba(168,47,72,.34),transparent 62%),radial-gradient(72% 100% at 92% 42%,rgba(78,122,153,.26),transparent 60%),linear-gradient(115deg,rgba(16,19,21,.90) 0%,rgba(8,9,11,.74) 50%,rgba(16,19,21,.82) 100%);
+  --areas-scrim-sm:radial-gradient(90% 60% at 20% 20%,rgba(168,47,72,.30),transparent 64%),linear-gradient(180deg,rgba(16,19,21,.90) 0%,rgba(8,9,11,.84) 58%,rgba(16,19,21,.88) 100%);
+  --band-bg:#0C1013;
+  --band-g1:#141C21;
+  --band-g2:#1E1319;
+}
+
+/* The hero scrim is a template RULE, not a token, and it is built from
+   --ink-rgb. Restate it with literal darks or the hero video loses its
+   white-text contrast entirely. */
+.hero{background:#08090B}
+.hero-scrim{
+  background:
+   linear-gradient(180deg,rgba(16,19,21,.80) 0%,rgba(16,19,21,.46) 34%,rgba(16,19,21,.72) 74%,rgba(16,19,21,1) 100%),
+   radial-gradient(120% 80% at 50% 40%,rgba(78,122,153,.10),transparent 60%);
+}
+/* .cta gets its colour from --ink, which is now light; the image and scrim sit
+   above it but pin the base so a slow image load does not flash white. */
+.cta{background:#101315}
+
+/* --- the mid-page dark surface becomes a light tint --- */
+.s-dark{
+  --bg:#F4F7F8;
+  --fg:#131A1D;
+  --fg-2:#3A464C;
+  --fg-muted:#5A676D;
+  --card:#FFFFFF;
+  --card-hi:#FFFFFF;
+  --card-line:#E2E8EB;
+  --card-line-hi:#BCC6CB;
+  --accent:var(--brand-dp);
+  --accent-2:var(--brand2-dk);
+  --chip:#FFFFFF;
+  --sh:0 2px 6px rgba(19,26,29,.06);
+  --sh-lg:0 8px 22px rgba(19,26,29,.10);
+  --ghost-line:#BAC4C9;
+}
+
+/* --- the three dark bands keep light text ---
+   These four rules take their colour from the --on-ink family, which is now
+   dark, but they sit on the hero video and the CTA image, which stay dark. Left
+   alone they render dark-on-dark and vanish. Pinned to literal light values. */
+.hero-sub{color:#CDD6DA}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.32)}
+.hero-chip{background:rgba(16,19,21,.52);border-color:rgba(255,255,255,.18);color:#E4EBED}
+.cta p{color:#CDD6DA}
+
+/* --- navbar --- */
+/* A translucent white wash over the video left the dark nav text at roughly 2:1
+   where the gradient faded. On a light theme a solid bar is both readable and
+   more honest to the style, so the nav is opaque from the top. */
+.nav::before{background:rgba(255,255,255,.96);border-bottom:1px solid #E8EDEF}
+.nav.solid::before{
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #E2E8EB;
+  box-shadow:0 6px 26px rgba(19,26,29,.08);
+}
+.brand-txt span{color:var(--brand2-dk)}
+.nav-links a::after{background:var(--brand-dp)}
+/* the burger's border and fill were rgba(255,255,255,...) - invisible on white */
+.burger{border-color:#D8E0E4;background:#F4F7F8;color:#131A1D}
+
+/* --- mobile drawer --- */
+.drawer{background:rgba(255,255,255,.98)}
+.drawer nav a{border-bottom-color:#E2E8EB}
+.drawer nav a .icon{color:var(--brand-dp)}
+.drawer .btn-ghost{border-color:#CBD5DA;color:#131A1D;background:#F4F7F8}
+.drawer .btn-ghost:hover{border-color:var(--brand-dp);color:var(--brand-dp)}
+
+/* --- footer --- */
+.foot{background:#EFF3F5;border-top:1px solid #E2E8EB}
+.foot h4{color:var(--brand2-dk)}
+.foot ul a:hover{color:var(--brand-dp)}
+.foot-bar{border-top:1px solid #DDE4E8}
+.foot-bar a{color:var(--brand-dp)}
+.socials a{background:#FFFFFF;border-color:#DDE4E8;color:#5A676D}
+.socials a:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.accred{border:1px solid #DDE4E8;background:#FFFFFF}
+/* the marks are already artwork on white, so drop the plate on a light footer */
+.accred-logos img{background:transparent;padding:0}
+
+/* --- trust strip --- */
+.trust{border-bottom:1px solid #E2E8EB}
+
+/* --- the Our Work overlay panel --- */
+.work{background:rgba(255,255,255,.98)}
+.work-top{background:rgba(255,255,255,.97);border-bottom:1px solid #E2E8EB}
+.work-close{border-color:#D8E0E4;background:#F4F7F8;color:#131A1D}
+
+/* --- reviews score / stars sit on white cards already, nothing to do --- */
+
+/* --- the sticky sidebar on generated pages --- */
+.sidecard,.sidelinks{background:#FFFFFF;border-color:#E2E8EB}
+
+/* Hero, areas and CTA keep white text on purpose - see the note at the top.
+   These are the elements the kit hardcodes to #fff, listed here so it is
+   obvious they were considered rather than missed:
+     .hero h1, .cta h2, .hero .btn-ghost, .cta .btn-ghost, .hero-dots button
+   All three bands remain dark, so all of them stay correct untouched. */

@@ -1,0 +1,1829 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Advanced Automated Access | Aluminium Glazing and Automatic Doors</title>
+<meta name="description" content="Design, manufacture, installation and maintenance of aluminium curtain walling, windows, doors, automatic doors and roller shutters. Essex based, working UK wide.">
+<meta name="theme-color" content="#101315">
+<link rel="icon" href="/advanced-automated-access-v2/media/home-1.png">
+<link rel="apple-touch-icon" href="/advanced-automated-access-v2/media/home-1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>:root{--a-mark-webp:url("/advanced-automated-access-v2/media/home-2.webp");--a-logo-webp:url("/advanced-automated-access-v2/media/home-3.webp");--a-areas-webp:url("/advanced-automated-access-v2/media/home-4.webp");--a-hero2-webp:url("/advanced-automated-access-v2/media/home-5.webp")}</style>
+<style>
+/* =========================================================
+   BRAND + GEOMETRY
+   Injected by build.js from the chosen art direction.
+   Never edit this block by hand - edit the direction file.
+   ========================================================= */
+:root{
+  /* --- palette: derived from the client logo --- */
+  --brand:#A82F48;        --brand-rgb:168,47,72;
+  --brand-lt:#DE6376;
+  --brand-dp:#8E2A40;
+  --brand2:#4E7A99;       --brand2-rgb:78,122,153;
+  --brand2-lt:#84AECA;
+  --brand2-dk:#2E5871;
+  --gold:#F5B62B;
+  --on-brand2:#FFFFFF;
+
+  /* --- dark ground --- */
+  --ink:#101315;          --ink-rgb:16,19,21;
+  --ink-1:#171B1E;
+  --ink-2:#212629;
+  --ink-deep:#08090B;     --ink-deep-rgb:8,9,11;
+
+  /* --- text on the dark ground --- */
+  --on-ink:#E9EEF0;
+  --on-ink-2:#CDD6DA;
+  --on-ink-muted:#93A0A6;
+  --on-ink-faint:#6F7C82;
+
+  /* --- text on always-white review cards --- */
+  --on-paper:#131A1D;
+  --on-paper-2:#3A464C;
+  --on-paper-muted:#5D6A70;
+  --on-paper-faint:#88949A;
+  --paper-line:#E9EDEF;
+  --star-muted:#AFB9BD;
+  --dot-idle:#BEC7CB;
+
+  /* --- the areas band --- */
+  --band-bg:#0C1013;
+  --band-g1:#141C21;
+  --band-g2:#1E1319;
+  --chip-core-bg:#2B151E;
+
+  /* --- hero rhythm: logo leads, headline supports (Redline / Fairmont) --- */
+  --hero-logo:clamp(250px,46vw,560px);
+  --hero-logo-sm:min(86vw,340px);
+  --hero-logo-gap:22px;
+  --hero-logo-gap-sm:14px;
+  --hero-h1:clamp(24px,4.1vw,41px);
+  --hero-sub:clamp(14px,2.1vw,16.5px);
+  /* The areas band scrim. Sits over .areas-bg, the section photograph, so every
+     layer stays translucent. The geometry matches the band gradient the section
+     used before it carried a picture, so the look is continuous. */
+  --areas-scrim:radial-gradient(72% 100% at 10% 50%,rgba(var(--brand-rgb),.34),transparent 62%),radial-gradient(72% 100% at 92% 42%,rgba(var(--brand2-rgb),.26),transparent 60%),linear-gradient(115deg,rgba(var(--ink-rgb),.90) 0%,rgba(var(--ink-deep-rgb),.74) 50%,rgba(var(--ink-rgb),.82) 100%);
+  /* Stacked below 860px the copy runs the full width, so darken evenly. */
+  --areas-scrim-sm:radial-gradient(90% 60% at 20% 20%,rgba(var(--brand-rgb),.30),transparent 64%),linear-gradient(180deg,rgba(var(--ink-rgb),.90) 0%,rgba(var(--ink-deep-rgb),.84) 58%,rgba(var(--ink-rgb),.88) 100%);
+  --cta-scrim:linear-gradient(135deg,rgba(var(--brand-rgb),.55),rgba(var(--ink-rgb),.68) 52%,rgba(var(--brand2-rgb),.5)),rgba(var(--ink-rgb),.34);
+
+  /* --- type --- */
+  --font-display:"Space Grotesk",Inter,system-ui,sans-serif;
+  --font-body:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+
+  /* --- geometry: the crispest of the four --- */
+  --r:6px;
+  --r-lg:10px;
+  --wrap:1160px;
+  --pad:clamp(18px,3.8vw,38px);
+  --sec:clamp(46px,6.4vw,88px);
+}
+
+.s-light{
+  --bg:#FFFFFF;
+  --fg:var(--on-paper);
+  --fg-2:var(--on-paper-2);
+  --fg-muted:var(--on-paper-muted);
+  --card:#F6F8F9;
+  --card-hi:#FFFFFF;
+  --card-line:#DFE5E8;
+  --card-line-hi:#B9C3C8;
+  --accent:var(--brand-dp);
+  --accent-2:var(--brand2-dk);
+  --chip:#EFF3F4;
+  --sh:0 2px 6px rgba(19,26,29,.06);
+  --sh-lg:0 8px 22px rgba(19,26,29,.11);
+  --ghost-line:#BAC4C9;
+}
+.s-tint{
+  --bg:#F3F6F7;
+  --fg:var(--on-paper);
+  --fg-2:var(--on-paper-2);
+  --fg-muted:var(--on-paper-muted);
+  --card:#FFFFFF;
+  --card-hi:#FFFFFF;
+  --card-line:#DCE3E6;
+  --card-line-hi:#B4BFC5;
+  --accent:var(--brand-dp);
+  --accent-2:var(--brand2-dk);
+  --chip:#FFFFFF;
+  --sh:0 2px 6px rgba(19,26,29,.06);
+  --sh-lg:0 8px 22px rgba(19,26,29,.11);
+  --ghost-line:#B0BBC1;
+}
+.s-dark{
+  --bg:var(--ink);
+  --fg:var(--on-ink);
+  --fg-2:var(--on-ink-2);
+  --fg-muted:var(--on-ink-muted);
+  --card:var(--ink-1);
+  --card-hi:var(--ink-2);
+  --card-line:rgba(255,255,255,.10);
+  --card-line-hi:rgba(255,255,255,.24);
+  --accent:var(--brand-lt);
+  --accent-2:var(--brand2-lt);
+  --chip:var(--ink-2);
+  --sh:0 3px 10px rgba(0,0,0,.42);
+  --sh-lg:0 10px 26px rgba(0,0,0,.48);
+  --ghost-line:rgba(255,255,255,.26);
+}
+.s-brand{
+  --bg:#101B1D;
+  --fg:#EAF1F2;
+  --fg-2:#CCD9DB;
+  --fg-muted:#9FAEB1;
+  --card:rgba(255,255,255,.05);
+  --card-hi:rgba(255,255,255,.09);
+  --card-line:rgba(255,255,255,.13);
+  --card-line-hi:var(--brand-lt);
+  --accent:var(--brand-lt);
+  --accent-2:var(--brand2-lt);
+  --chip:rgba(255,255,255,.06);
+  --sh:0 3px 10px rgba(0,0,0,.42);
+  --sh-lg:0 10px 26px rgba(0,0,0,.48);
+  --ghost-line:rgba(255,255,255,.26);
+}
+
+/* SURFACES: supplied by the art direction, spliced in above. */
+
+/* =========================================================
+   BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:#FFFFFF;color:var(--on-paper);
+  font-family:var(--font-body);
+  font-size:16px;line-height:1.62;letter-spacing:.005em;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;line-height:1.06;letter-spacing:-.015em;margin:0}
+p{margin:0}
+
+section,footer{background:var(--bg);color:var(--fg)}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+.sec{padding-block:var(--sec)}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-display);font-weight:700;font-size:12px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);border-radius:2px}
+h2.title{font-size:clamp(28px,5.2vw,46px);color:var(--fg)}
+.lede{color:var(--fg-muted);margin-top:14px;max-width:62ch;font-size:clamp(15px,2.4vw,17px)}
+.center{text-align:center}
+.center .lede{margin-inline:auto}
+.center .eyebrow{justify-content:center}
+.ph{
+  display:inline-block;font-family:var(--font-display);font-weight:700;font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--gold);
+  padding:2px 7px;border-radius:5px;vertical-align:middle;
+}
+.logo-mark{background-size:contain;background-repeat:no-repeat;background-position:center;display:block;flex:0 0 auto}
+/* the logo wordmark is white, so on light surfaces it sits on its own dark tile */
+.logo-tile{background-color:var(--ink);background-origin:content-box;padding:8px;border-radius:12px}
+.icon{width:22px;height:22px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.02em;
+  padding:13px 22px;border-radius:100px;transition:.22s ease;white-space:nowrap;
+  min-height:48px;
+}
+.btn .icon{width:18px;height:18px}
+.btn-primary{background-color:var(--brand-dp);background-image:linear-gradient(135deg,var(--brand) 0%,var(--brand-dp) 100%);color:#fff;box-shadow:0 10px 26px rgba(var(--brand-rgb),.34)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(var(--brand-rgb),.44)}
+.btn-cyan{background:var(--brand2);color:var(--on-brand2);box-shadow:0 10px 26px rgba(var(--brand2-rgb),.28)}
+.btn-cyan:hover{transform:translateY(-2px);background:var(--brand2-lt)}
+.btn-ghost{border:1.5px solid var(--ghost-line);color:var(--fg);background:transparent}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.s-dark .btn-ghost,.s-brand .btn-ghost,.hero .btn-ghost{backdrop-filter:blur(6px);background:rgba(var(--ink-rgb),.32)}
+.btn-block{width:100%}
+
+/* =========================================================
+   NAV  (stays dark in both states, over light and dark alike)
+   ========================================================= */
+.nav{position:fixed;inset:0 0 auto 0;z-index:120;transition:.3s ease;color:var(--on-ink)}
+.nav-in{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;height:74px;
+  width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad);
+}
+.nav::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--ink-rgb),.86),rgba(var(--ink-rgb),0));transition:.3s}
+.nav.solid::before{background:rgba(var(--ink-rgb),.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.10);box-shadow:0 6px 26px rgba(var(--ink-rgb),.20)}
+.nav-in>*{position:relative}
+.brand{display:flex;align-items:center;gap:11px;flex:0 0 auto;padding-block:6px}
+.brand .logo-mark{width:42px;height:42px}
+.brand-txt{display:flex;flex-direction:column;line-height:1.05}
+.brand-txt b{font-family:var(--font-display);font-weight:800;font-size:15px;letter-spacing:.01em}
+.brand-txt span{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--brand2);font-weight:600}
+.nav-links{display:flex;gap:26px;margin-inline:auto}
+.nav-links a{font-size:14px;font-weight:500;color:var(--on-ink-muted);transition:.2s;position:relative;padding-block:6px}
+.nav-links a:hover{color:var(--on-ink)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--brand2);transition:.25s;border-radius:2px}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.nav-call{
+  display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:100px;
+  background-color:var(--brand-dp);background-image:linear-gradient(135deg,var(--brand) 0%,var(--brand-dp) 100%);color:#fff;
+  font-family:var(--font-display);font-weight:700;font-size:14.5px;box-shadow:0 8px 22px rgba(var(--brand-rgb),.3);
+  transition:.22s;min-height:44px;
+}
+.nav-call:hover{transform:translateY(-2px)}
+.burger{display:none;width:46px;height:46px;border-radius:12px;border:1px solid rgba(255,255,255,.18);align-items:center;justify-content:center;background:rgba(255,255,255,.06);color:var(--on-ink)}
+.drawer{
+  position:fixed;inset:0;z-index:130;background:rgba(var(--ink-deep-rgb),.97);backdrop-filter:blur(10px);
+  display:flex;flex-direction:column;padding:22px var(--pad) 30px;color:var(--on-ink);
+  transform:translateY(-102%);visibility:hidden;
+  transition:transform .38s cubic-bezier(.4,0,.2,1),visibility 0s .38s;
+}
+.drawer.open{transform:translateY(0);visibility:visible;transition-delay:0s}
+.drawer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.drawer nav{display:flex;flex-direction:column;gap:2px}
+.drawer nav a{
+  font-family:var(--font-display);font-weight:700;font-size:23px;padding:13px 0;
+  border-bottom:1px solid rgba(255,255,255,.10);display:flex;align-items:center;justify-content:space-between;color:var(--on-ink);
+}
+.drawer nav a .icon{width:18px;height:18px;color:var(--brand-lt)}
+.drawer-foot{margin-top:auto;padding-top:24px;display:grid;gap:10px}
+.drawer .btn-ghost{border-color:rgba(255,255,255,.24);color:var(--on-ink);background:rgba(255,255,255,.04)}
+.drawer .btn-ghost:hover{border-color:var(--brand-lt);color:var(--brand-lt)}
+
+/* =========================================================
+   HERO  (always dark)
+   ========================================================= */
+.hero{position:relative;min-height:min(96svh,880px);display:flex;align-items:center;overflow:hidden;isolation:isolate;background:var(--ink-deep)}
+.hero-media{position:absolute;inset:0;z-index:-2;background:var(--ink-deep)}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s ease;transform:scale(1.06)}
+.hero-slide.on{opacity:1;animation:kb 15s ease-out forwards}
+@keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.13)}}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-scrim{position:absolute;inset:0;z-index:-1;
+  background:
+   linear-gradient(180deg,rgba(var(--ink-rgb),.80) 0%,rgba(var(--ink-rgb),.46) 34%,rgba(var(--ink-rgb),.72) 74%,var(--ink) 100%),
+   radial-gradient(120% 80% at 50% 40%,rgba(var(--brand2-rgb),.10),transparent 60%);
+}
+.hero-in{width:100%;max-width:var(--wrap);margin-inline:auto;padding:120px var(--pad) 92px;text-align:center}
+.hero-logo{width:var(--hero-logo);aspect-ratio:1/1;margin:0 auto var(--hero-logo-gap);filter:drop-shadow(0 10px 30px rgba(0,0,0,.55))}
+.hero h1{font-size:var(--hero-h1);text-wrap:balance;text-shadow:0 3px 26px rgba(0,0,0,.5);color:#fff}
+.hero h1 em{font-style:normal;color:var(--brand-lt)}
+.hero-sub{margin:16px auto 0;max-width:58ch;color:var(--on-ink-2);font-size:var(--hero-sub);text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.hero-strip{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.hero-chip{
+  display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:100px;
+  background:rgba(var(--ink-rgb),.5);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(8px);
+  font-size:12.5px;font-weight:600;color:var(--on-ink-2);
+}
+.hero-chip .icon{width:15px;height:15px;color:var(--brand2)}
+.hero .btn-ghost{color:var(--on-ink);border-color:rgba(255,255,255,.28)}
+.hero .btn-ghost:hover{border-color:var(--brand-lt);color:var(--brand-lt)}
+.hero-dots{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+.hero-dots button{width:26px;height:4px;border-radius:4px;background:rgba(255,255,255,.28);transition:.25s;padding:12px 0;box-sizing:content-box;background-clip:content-box}
+.hero-dots button.on{background:var(--brand2);width:38px;background-clip:content-box}
+
+/* =========================================================
+   TRUST STRIP  (dark band, bridges the hero into the light page)
+   ========================================================= */
+.trust{border-bottom:1px solid var(--card-line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--card-line)}
+.trust-item{background:var(--bg);padding:26px 18px;display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center}
+.trust-item .icon{width:26px;height:26px;color:var(--accent-2)}
+.trust-item b{font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--fg)}
+.trust-item b .ph{display:block;margin:5px auto 0;width:fit-content}
+.trust-item span{font-size:12.5px;color:var(--fg-muted);line-height:1.45}
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+.svc{
+  position:relative;background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);
+  padding:22px 20px 24px;overflow:hidden;transition:.26s ease;
+}
+.svc::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--brand),var(--brand2));transform:scaleX(0);transform-origin:left;transition:.3s}
+.svc:hover{border-color:var(--card-line-hi);transform:translateY(-3px);background:var(--card-hi);box-shadow:var(--sh)}
+.svc:hover::before{transform:scaleX(1)}
+.svc-ico{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px;
+  background-color:var(--chip);
+  background-image:linear-gradient(135deg,rgba(var(--brand-rgb),.20),rgba(var(--brand2-rgb),.13));
+  border:1px solid var(--card-line);color:var(--accent);
+}
+.svc-ico .icon{width:22px;height:22px}
+.svc h3{font-size:17.5px;margin-bottom:8px;color:var(--fg)}
+.svc p{font-size:14px;color:var(--fg-muted);line-height:1.6}
+
+/* =========================================================
+   TRANSFORMATIONS  (dark showpiece)
+   ========================================================= */
+.trans{
+  background-color:var(--ink);
+  background-image:
+    radial-gradient(90% 60% at 50% 0%,rgba(var(--brand2-rgb),.10),transparent 62%),
+    radial-gradient(80% 55% at 50% 100%,rgba(var(--brand-rgb),.11),transparent 60%);
+}
+.zig{display:grid;gap:clamp(40px,6vw,76px);margin-top:44px}
+.zig-row{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,52px);align-items:center}
+.zig-row:nth-child(even) .zig-media{order:2}
+.zig-row:nth-child(even) .zig-copy{order:1}
+.zig-copy .num{
+  font-family:var(--font-display);font-weight:800;font-size:13px;letter-spacing:.14em;
+  color:var(--accent);display:block;margin-bottom:10px;
+}
+.zig-copy h3{font-size:clamp(21px,3.4vw,30px);margin-bottom:12px;color:var(--fg)}
+.zig-copy p{color:var(--fg-muted);font-size:15px}
+.zig-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.zig-tags span{
+  font-size:12px;font-weight:600;padding:6px 12px;border-radius:100px;
+  background:var(--chip);border:1px solid var(--card-line);color:var(--fg-muted);
+}
+.zig-media{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--card-line-hi);box-shadow:var(--sh-lg);background:#000}
+.zig-media video{width:100%;height:auto;display:block;aspect-ratio:4/5;object-fit:cover;background:#000}
+
+/* before / after slider */
+.ba{position:relative;aspect-ratio:4/5;overflow:hidden;touch-action:pan-y;user-select:none;cursor:ew-resize;--pos:50%}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .after-wrap{position:absolute;inset:0;clip-path:inset(0 0 0 var(--pos))}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.35),0 0 22px rgba(0,0,0,.45);pointer-events:none}
+.ba-knob{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:46px;height:46px;border-radius:50%;background:#fff;color:var(--on-paper);
+  display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.45);
+}
+.ba-knob svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ba-lbl{
+  position:absolute;top:12px;padding:5px 12px;border-radius:100px;font-family:var(--font-display);
+  font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;pointer-events:none;
+  background:rgba(var(--ink-rgb),.72);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px);
+}
+.ba-lbl.b{left:12px;color:#fff}
+.ba-lbl.a{right:12px;color:var(--brand2-lt)}
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:38px}
+.gal figure{margin:0;position:relative;overflow:hidden;border-radius:12px;aspect-ratio:1/1;background:var(--card);cursor:zoom-in;box-shadow:var(--sh)}
+.gal figure.big{grid-column:span 2;grid-row:span 2}
+.gal figure.more{display:none}
+.gal figcaption{display:none}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.gal figure:hover img{transform:scale(1.07)}
+.gal figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(var(--ink-rgb),.5));opacity:0;transition:.3s}
+.gal figure:hover::after{opacity:1}
+
+
+/* lightbox (always dark) */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(var(--ink-deep-rgb),.95);display:none;align-items:center;justify-content:center;padding:20px;color:var(--on-ink)}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:88vh;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.55)}
+.lb-close{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);display:grid;place-items:center}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);display:grid;place-items:center}
+.lb-nav.prev{left:14px}.lb-nav.next{right:14px}
+
+/* =========================================================
+   WHY CHOOSE US
+   ========================================================= */
+.why{border-block:1px solid var(--card-line)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+.why-card{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);padding:22px 20px;transition:.24s}
+.why-card:hover{border-color:var(--card-line-hi);background:var(--card-hi);box-shadow:var(--sh)}
+.why-card .icon{width:24px;height:24px;color:var(--accent-2);margin-bottom:12px}
+.why-card h3{font-size:16.5px;margin-bottom:7px;color:var(--fg)}
+.why-card p{font-size:13.8px;color:var(--fg-muted);line-height:1.58}
+
+/* =========================================================
+   REVIEWS
+   ========================================================= */
+.rev-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.rev-score{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--card-line);border-radius:var(--r);padding:14px 18px;box-shadow:var(--sh)}
+.rev-score b{font-family:var(--font-display);font-size:34px;font-weight:800;line-height:1}
+.rev-score small{display:block;font-size:11.5px;color:var(--fg-muted);margin-top:4px}
+.stars{display:inline-flex;gap:2px;color:var(--gold)}
+.stars svg{width:16px;height:16px;fill:currentColor}
+.stars.muted{color:var(--star-muted)}
+.rev-view{overflow:hidden;margin-top:34px}
+.rev-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.rev-cell{flex:0 0 33.3333%;padding:6px 7px 14px;display:flex}
+.rev-card{
+  background:#fff;border:1px solid var(--card-line);border-radius:var(--r);padding:22px 20px;width:100%;
+  display:flex;flex-direction:column;gap:12px;box-shadow:var(--sh);
+}
+.rev-top{display:flex;align-items:center;gap:12px}
+.rev-av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:18px;color:#fff;flex:0 0 auto}
+.rev-who b{display:block;font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--on-paper)}
+.rev-who span{font-size:12px;color:var(--on-paper-muted)}
+.rev-card p{font-size:14.2px;color:var(--on-paper-2);line-height:1.62;flex:1}
+.rev-foot{font-size:11.5px;color:var(--on-paper-muted);border-top:1px solid var(--paper-line);padding-top:11px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.rev-ctl{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px}
+.rev-arrow{width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--card-line);display:grid;place-items:center;color:var(--on-paper);transition:.22s;box-shadow:var(--sh)}
+.rev-arrow:hover{background:var(--brand-dp);color:#fff;border-color:var(--brand-dp)}
+.rev-pages{display:flex;gap:0}
+.rev-pages button{width:9px;height:9px;border-radius:50%;background:var(--dot-idle);transition:.22s;padding:14px 6px;box-sizing:content-box;background-clip:content-box}
+.rev-pages button.on{background:var(--brand-dp);width:26px;border-radius:6px;background-clip:content-box}
+
+/* review platform links */
+.rev-plat{margin-top:26px;text-align:center}
+.rev-plat-lede{font-size:13.5px;color:var(--fg-muted);margin-bottom:14px}
+.plat-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.plat{
+  display:inline-flex;align-items:center;gap:11px;padding:12px 20px 12px 16px;border-radius:12px;
+  background:#fff;border:1px solid var(--card-line);box-shadow:var(--sh);
+  transition:.22s ease;min-height:56px;text-align:left;
+}
+.plat:hover{transform:translateY(-2px);box-shadow:var(--sh-lg);border-color:var(--card-line-hi)}
+.plat-logo{width:26px;height:26px;flex:0 0 auto;display:grid;place-items:center}
+.plat-logo svg{width:100%;height:100%;display:block}
+.plat-txt{display:flex;flex-direction:column;line-height:1.2}
+.plat-txt b{font-family:var(--font-display);font-weight:700;font-size:14.5px;color:var(--on-paper)}
+.plat-txt span{font-size:11.5px;color:var(--on-paper-muted)}
+.plat .go{width:16px;height:16px;color:var(--on-paper-faint);margin-left:2px;flex:0 0 auto}
+.plat:hover .go{color:var(--brand-dp)}
+/* each platform keeps its own brand accent on the left edge */
+.plat-google{box-shadow:inset 3px 0 0 #4285F4,var(--sh)}
+.plat-google:hover{box-shadow:inset 3px 0 0 #4285F4,var(--sh-lg)}
+.plat-fb{box-shadow:inset 3px 0 0 #1877F2,var(--sh)}
+.plat-fb:hover{box-shadow:inset 3px 0 0 #1877F2,var(--sh-lg)}
+.plat-cat{box-shadow:inset 3px 0 0 #16357A,var(--sh)}
+.plat-cat:hover{box-shadow:inset 3px 0 0 #16357A,var(--sh-lg)}
+
+/* =========================================================
+   OUR WORK  (full-screen panel opened from Recent Projects)
+   ========================================================= */
+.work-cta{margin-top:26px;text-align:center}
+.work-count{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  font-size:12.5px;font-weight:600;color:var(--fg-muted);margin-top:12px;
+}
+.work{
+  position:fixed;inset:0;z-index:160;background:var(--ink);color:var(--on-ink);
+  display:flex;flex-direction:column;
+  transform:translateY(100%);visibility:hidden;
+  transition:transform .42s cubic-bezier(.4,0,.2,1),visibility .42s;
+}
+.work.open{transform:translateY(0);visibility:visible}
+@media(prefers-reduced-motion:reduce){.work{transition:none}}
+.work-top{
+  flex:0 0 auto;background:rgba(var(--ink-rgb),.97);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.work-top-in{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  width:100%;max-width:1360px;margin-inline:auto;padding:14px var(--pad);
+}
+.work-id{display:flex;align-items:center;gap:12px}
+.work-id .logo-mark{width:40px;height:40px}
+.work-id b{font-family:var(--font-display);font-weight:800;font-size:19px;display:block;line-height:1.1}
+.work-id span{font-size:12.5px;color:var(--on-ink-muted)}
+.work-close{
+  display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:100px;
+  border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:var(--on-ink);
+  font-family:var(--font-display);font-weight:700;font-size:14px;transition:.22s;min-height:46px;
+}
+.work-close:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.work-close .icon{width:17px;height:17px}
+.work-body{flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:22px var(--pad) 48px}
+.work-grid{
+  width:100%;max-width:1360px;margin-inline:auto;
+  column-count:4;column-gap:12px;
+}
+.work-grid figure{margin:0 0 12px;break-inside:avoid;position:relative;overflow:hidden;border-radius:12px;background:var(--ink-1);cursor:zoom-in}
+.work-grid img{width:100%;height:auto;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.work-grid figure:hover img{transform:scale(1.05)}
+.work-grid figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;
+  font-size:12.5px;font-weight:600;color:#fff;
+  background:linear-gradient(180deg,transparent,rgba(var(--ink-rgb),.82));
+  opacity:0;transition:.28s;
+}
+.work-grid figure:hover figcaption{opacity:1}
+.work-foot{
+  max-width:1360px;margin:26px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.10);
+  display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(26px,4.5vw,60px);align-items:center}
+.about-media{position:relative}
+.about-media .main{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--card-line);box-shadow:var(--sh-lg);aspect-ratio:4/3}
+.about-media .main img{width:100%;height:100%;object-fit:cover}
+.about-media .inset{
+  position:absolute;right:-14px;bottom:-24px;width:44%;border-radius:var(--r);overflow:hidden;
+  border:4px solid var(--bg);box-shadow:var(--sh-lg);aspect-ratio:4/3;
+}
+.about-media .inset img{width:100%;height:100%;object-fit:cover}
+.about-copy h2{font-size:clamp(26px,4.4vw,40px);color:var(--fg)}
+.about-copy p{color:var(--fg-muted);margin-top:14px;font-size:15.2px}
+.about-sign{display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid var(--card-line)}
+.about-sign .logo-mark{width:52px;height:52px}
+.about-sign b{font-family:var(--font-display);font-weight:800;font-size:16px;display:block;color:var(--fg)}
+.about-sign span{font-size:12.5px;color:var(--fg-muted)}
+
+/* =========================================================
+   AREAS  (photograph behind a brand-coloured wash)
+   =========================================================
+   A .areas-bg div supplies the picture and .areas-scrim the wash, exactly the
+   way .cta-bg / .cta-scrim work at the foot of the page.
+
+   isolation:isolate makes .areas a stacking context, so a z-index:-2 child
+   paints ABOVE the section's own background-image but below the content. That
+   is what makes the gradient below a real fallback rather than dead weight: a
+   body.html with no .areas-bg still renders the original flat band, unchanged,
+   and there is nothing to switch off with :has() or a modifier class. */
+.areas{
+  position:relative;overflow:hidden;isolation:isolate;
+  background-color:var(--band-bg);
+  background-image:
+    radial-gradient(72% 100% at 10% 50%,rgba(var(--brand-rgb),.26),transparent 62%),
+    radial-gradient(72% 100% at 92% 42%,rgba(var(--brand2-rgb),.20),transparent 60%),
+    linear-gradient(135deg,var(--band-g1) 0%,var(--ink) 52%,var(--band-g2) 100%);
+}
+.areas-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center}
+.areas-scrim{position:absolute;inset:0;z-index:-1;background:var(--areas-scrim)}
+.area-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(26px,4.5vw,56px);align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:100px;
+  background:var(--chip);border:1px solid var(--card-line);font-size:13.5px;font-weight:600;
+  color:var(--fg-2);transition:.22s;
+}
+.chip .icon{width:15px;height:15px;color:var(--accent-2)}
+.chip.core{background-color:var(--chip-core-bg);background-image:linear-gradient(135deg,rgba(var(--brand-rgb),.34),rgba(var(--brand2-rgb),.20));border-color:var(--brand-lt);color:#fff}
+.chip.ph-chip{border-style:dashed}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.form-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(26px,4.5vw,56px);align-items:start;margin-top:38px}
+.contact-list{display:grid;gap:12px}
+.contact-row{
+  display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--card-line);
+  border-radius:var(--r);padding:16px 18px;transition:.22s;
+}
+.contact-row:hover{border-color:var(--card-line-hi);box-shadow:var(--sh)}
+.contact-row .icon{width:20px;height:20px;color:var(--accent-2);margin-top:3px}
+.contact-row small{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-muted);font-weight:600}
+.contact-row b{font-family:var(--font-display);font-weight:700;font-size:15.5px;overflow-wrap:anywhere;line-height:1.35;color:var(--fg)}
+form{background:var(--card);border:1px solid var(--card-line);border-radius:var(--r-lg);padding:clamp(20px,3.4vw,32px);box-shadow:var(--sh)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.field{display:block;margin-bottom:14px}
+.field span{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-muted);margin-bottom:7px}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--bg);border:1px solid var(--card-line-hi);border-radius:11px;
+  padding:13px 15px;color:var(--fg);font:inherit;font-size:15px;transition:.2s;min-height:50px;
+}
+.field textarea{min-height:112px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:var(--fg-muted);opacity:.8}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brand-dp);box-shadow:0 0 0 3px rgba(var(--brand-rgb),.20)}
+.field select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235C6659' stroke-width='2' stroke-linecap='round'><path d='m6 9 6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:42px}
+.form-note{font-size:12.5px;color:var(--fg-muted);margin-top:12px;text-align:center}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+.cta{position:relative;overflow:hidden;isolation:isolate;text-align:center;background:var(--ink)}
+.cta-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center}
+.cta-scrim{position:absolute;inset:0;z-index:-1;background:var(--cta-scrim)}
+.cta h2{font-size:clamp(27px,5.2vw,48px);text-wrap:balance;color:#fff}
+.cta p{color:var(--on-ink-2);margin:14px auto 0;max-width:56ch;font-size:clamp(15px,2.4vw,17px)}
+.cta .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.cta .btn-ghost:hover{border-color:#fff;color:#fff;background:rgba(255,255,255,.12)}
+
+/* =========================================================
+   FOOTER  (always dark)
+   ========================================================= */
+.foot{background:var(--ink-deep);color:var(--on-ink);border-top:1px solid rgba(255,255,255,.10);padding-block:clamp(38px,5vw,58px) 0}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:32px}
+.foot-brand .logo-mark{width:64px;height:64px;margin-bottom:14px}
+.foot p{font-size:13.6px;color:var(--on-ink-muted);line-height:1.62}
+.foot h4{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--brand2);margin-bottom:14px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.foot ul a,.foot ul li{font-size:13.6px;color:var(--on-ink-muted);transition:.2s}
+.foot ul a:hover{color:var(--brand-lt)}
+.socials{display:flex;gap:10px;margin-top:16px}
+.socials a{width:42px;height:42px;border-radius:11px;background:var(--ink-2);border:1px solid rgba(255,255,255,.10);display:grid;place-items:center;transition:.22s;color:var(--on-ink-muted)}
+.socials a:hover{background:var(--brand);border-color:var(--brand);color:#fff;transform:translateY(-2px)}
+.socials svg{width:19px;height:19px;fill:currentColor}
+.accred{margin-top:20px;padding:14px 16px;border:1px dashed rgba(255,255,255,.20);border-radius:var(--r);font-size:12.5px;color:var(--on-ink-muted)}
+.foot-bar{margin-top:clamp(30px,4vw,46px);border-top:1px solid rgba(255,255,255,.10);padding-block:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.foot-bar small{font-size:12.4px;color:var(--on-ink-faint)}
+.foot-bar a{color:var(--brand-lt)}
+
+/* =========================================================
+   WHATSAPP FLOAT
+   ========================================================= */
+.wa{
+  position:fixed;right:16px;bottom:16px;z-index:150;width:58px;height:58px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;color:#fff;
+  box-shadow:0 10px 30px rgba(37,211,102,.42);transition:.24s;
+}
+.wa:hover{transform:scale(1.07)}
+.wa svg{width:31px;height:31px;fill:currentColor}
+.wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}70%{transform:scale(1.5);opacity:0}100%{opacity:0}}
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+
+/* The .ph badge must win over any (0,2,0) descendant colour rule above,
+   e.g. .trust-item span or .about-sign span. Equal specificity, declared
+   later, so source order decides. */
+.ph.ph{color:var(--ink);background-color:var(--gold)}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media(max-width:1024px){
+  .work-grid{column-count:3}
+  .nav-links{display:none}
+  .burger{display:flex}
+  .svc-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+  .rev-cell{flex-basis:50%}
+}
+@media(max-width:860px){
+  .work-grid{column-count:2}
+  .zig-row{grid-template-columns:1fr;gap:20px}
+  .zig-row .zig-media{order:2 !important}
+  .zig-row .zig-copy{order:1 !important}
+  .about-grid,.area-wrap,.form-grid{grid-template-columns:1fr}
+  /* .area-wrap collapses here, so the areas copy now runs the full width of the
+     photograph rather than sitting down its left side. The scrim has to darken
+     evenly or the headline lands on the bright part of the picture. */
+  .areas-scrim{background:var(--areas-scrim-sm)}
+  .about-media .inset{position:static;width:100%;margin-top:12px;border-width:0;aspect-ratio:16/9}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+  :root{--sec:34px;--pad:16px}
+  body{font-size:15.5px;line-height:1.58}
+  h2.title{font-size:clamp(24px,6.4vw,30px)}
+  .lede{font-size:14.2px;margin-top:9px;max-width:38ch}
+  .eyebrow{font-size:11px;margin-bottom:10px}
+  .nav-in{height:64px}
+  .nav-call{padding:9px 14px;font-size:13.5px}
+  .nav-call .lbl{display:none}
+  .brand .logo-mark{width:36px;height:36px}
+  .brand-txt b{font-size:13.5px}
+  .brand-txt span{font-size:9px}
+  .hero{min-height:auto}
+  .hero-in{padding:88px var(--pad) 52px}
+  .hero-logo{width:var(--hero-logo-sm);margin-bottom:var(--hero-logo-gap-sm)}
+  .hero-sub{font-size:14.8px;max-width:40ch;margin-top:12px}
+  .hero-btns{gap:9px;margin-top:22px}
+  .hero-btns .btn{flex:1 1 45%;padding:12px 10px;font-size:14px}
+  .hero-strip{gap:7px;margin-top:18px}
+  .hero-chip{font-size:11.4px;padding:6px 11px}
+  .hero-chip.opt{display:none}
+  .svc{padding:15px 14px 17px;border-radius:12px}
+  .svc-ico{width:36px;height:36px;border-radius:10px;margin-bottom:9px}
+  .svc-ico .icon{width:18px;height:18px}
+  .svc h3{font-size:14.8px;line-height:1.16;margin-bottom:5px}
+  .svc p{font-size:12.6px;line-height:1.48}
+  .svc-grid{gap:9px;margin-top:22px}
+  .zig{gap:30px;margin-top:24px}
+  .zig-copy h3{font-size:19.5px;margin-bottom:8px}
+  .zig-copy p{font-size:14px}
+  .zig-tags{margin-top:12px;gap:6px}
+  .zig-tags span:nth-child(n+4){display:none}
+  .zig-tags span{font-size:11.4px;padding:5px 10px}
+  .ba,.zig-media video{aspect-ratio:1/1}
+  .zig-media{border-radius:14px}
+  .gal{grid-template-columns:repeat(2,1fr);gap:8px;margin-top:22px}
+  .gal figure.big{grid-column:span 2;grid-row:span 1;aspect-ratio:16/12}
+  .gal figure:nth-child(n+6){display:none}
+  .why-grid{gap:9px;margin-top:22px}
+  .why-card{padding:15px 14px;border-radius:12px}
+  .why-card h3{font-size:14.4px;margin-bottom:5px}
+  .why-card p{font-size:12.6px;line-height:1.48}
+  .why-card .icon{width:20px;height:20px;margin-bottom:8px}
+  .rev-cell{flex-basis:100%;padding:4px 3px 12px}
+  .rev-card{padding:18px 16px;gap:10px}
+  .rev-card p{font-size:13.6px}
+  .rev-view{margin-top:22px}
+  .rev-head{gap:14px}
+  .rev-score{padding:12px 15px;gap:11px}
+  .rev-score b{font-size:28px}
+  .chips{gap:7px}
+  .chip{padding:9px 13px;font-size:12.6px}
+  .plat-row{flex-direction:column;gap:9px}
+  .plat{width:100%;padding:11px 16px 11px 14px;min-height:54px}
+  .plat-txt{flex:1}
+  .rev-plat{margin-top:20px}
+  .work-grid{column-count:2;column-gap:8px}
+  .work-grid figure{margin-bottom:8px;border-radius:10px}
+  .work-grid figcaption{opacity:1;font-size:11px;padding:20px 10px 9px}
+  .work-top-in{padding:10px var(--pad)}
+  .work-id .logo-mark{width:34px;height:34px}
+  .work-id b{font-size:16px}
+  .work-id span{font-size:11px}
+  .work-close{padding:10px 14px;font-size:13px;min-height:44px}
+  .work-close .lbl{display:none}
+  .work-body{padding:14px var(--pad) 34px}
+  .work-cta{margin-top:20px}
+  .f2{gap:0 10px}
+  .field input,.field select{padding:12px 13px;font-size:14.5px;min-height:48px}
+  .field span{font-size:11px;margin-bottom:5px}
+  .field select{background-position:right 10px center;background-size:16px;padding-right:32px}
+  form{border-radius:16px}
+  .field{margin-bottom:12px}
+  .field textarea{min-height:92px}
+  .contact-row{padding:13px 15px}
+  .contact-row b{font-size:14.2px}
+  .contact-row.dupe{display:none}
+  .contact-list{gap:9px}
+  .foot-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 16px}
+  .foot-brand{grid-column:1 / -1}
+  .foot-grid>div:last-child{grid-column:1 / -1}
+  .foot ul{gap:0}
+  .foot ul li{padding-block:4px}
+  .foot ul a{display:inline-block;padding-block:4px}
+  .foot ul a,.foot ul li{font-size:12.8px}
+  .foot h4{font-size:12px;margin-bottom:10px}
+  .foot p{font-size:12.8px}
+  .accred{margin-top:14px;padding:11px 13px;font-size:11.8px}
+  .foot{padding-block:30px 0}
+  .socials{margin-top:12px}
+  .socials a{width:42px;height:42px}
+  .foot-bar{justify-content:center;text-align:center}
+  .wa{width:54px;height:54px;right:14px;bottom:14px}
+  .wa svg{width:28px;height:28px}
+  .trust-item{padding:14px 11px;gap:4px}
+  .trust-item b{font-size:13.2px}
+  .trust-item span{font-size:11.4px;line-height:1.38}
+  .trust-item .icon{width:21px;height:21px}
+  .about-copy p{font-size:14.2px;margin-top:11px}
+  .about-media .inset{display:none}
+  .about-media .main{aspect-ratio:16/10}
+  .about-sign{margin-top:18px;padding-top:16px}
+  .lb-nav{width:42px;height:42px}
+  .btn{font-size:14.4px;padding:12px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+  /* the hero still rotates, it just crossfades instead of panning and zooming */
+  .hero-slide{animation:none !important;transform:none !important;transition-duration:.8s !important}
+}
+</style>
+<link rel="canonical" href="https://aaauk.co.uk/">
+<meta property="og:title" content="Advanced Automated Access | Aluminium Glazing and Automatic Doors">
+<meta property="og:description" content="Design, manufacture, installation and maintenance of aluminium curtain walling, windows, doors, automatic doors and roller shutters. Essex based, working UK wide.">
+<meta property="og:url" content="https://aaauk.co.uk/">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://aaauk.co.uk/#website","url":"https://aaauk.co.uk/","name":"Advanced Automated Access Ltd","publisher":{"@id":"https://aaauk.co.uk/#business"}},{"@type":"GeneralContractor","@id":"https://aaauk.co.uk/#business","name":"Advanced Automated Access Ltd","url":"https://aaauk.co.uk/","telephone":"+441277812472","email":"info@aaauk.co.uk","description":"Design, manufacture, installation and maintenance of aluminium curtain walling, windows, doors, automatic doors and roller shutters. Essex based, working UK wide.","address":{"@type":"PostalAddress","streetAddress":"Unit 25 Skylark House, Fenttiman Road","addressLocality":"Canvey Island","addressRegion":"Essex","postalCode":"SS8 0EQ","addressCountry":"GB"},"contactPoint":{"@type":"ContactPoint","telephone":"+441277812472","email":"info@aaauk.co.uk","contactType":"sales"},"areaServed":[{"@type":"Country","name":"United Kingdom"},{"@type":"City","name":"Canvey Island"},{"@type":"City","name":"Basildon"},{"@type":"City","name":"Southend-on-Sea"},{"@type":"City","name":"Chelmsford"},{"@type":"City","name":"Brentwood"},{"@type":"City","name":"Grays and Thurrock"},{"@type":"City","name":"Colchester"},{"@type":"City","name":"London"},{"@type":"City","name":"East London and Docklands"},{"@type":"City","name":"Romford and Havering"},{"@type":"City","name":"Dartford and North Kent"},{"@type":"City","name":"Croydon and South London"},{"@type":"City","name":"Hertfordshire"},{"@type":"City","name":"Kent"},{"@type":"City","name":"Suffolk"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],"foundingDate":"2008-06-09","sameAs":["https://uk.linkedin.com/company/advanced-automated-access-ltd"]},{"@type":"WebPage","@id":"https://aaauk.co.uk/#page","url":"https://aaauk.co.uk/","name":"Advanced Automated Access | Aluminium Glazing and Automatic Doors","description":"Design, manufacture, installation and maintenance of aluminium curtain walling, windows, doors, automatic doors and roller shutters. Essex based, working UK wide.","isPartOf":{"@id":"https://aaauk.co.uk/#website"},"about":{"@id":"https://aaauk.co.uk/#business"}}]}</script>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<!-- Advanced Automated Access Ltd - project body.
+     Built from the innov8 site-kit golden body. Section order is the house
+     standard and must not be reordered: see rules/HOUSE-RULES.md.
+
+     Two deliberate deviations from the golden body, both flagged to Jay:
+       1. No WhatsApp anywhere. AAA is a B2B contractor with a landline and no
+          mobile supplied, so the float, the drawer button and the quote form all
+          go to email instead. Give me a mobile and this flips back in one edit.
+       2. The transformations section carries project case studies rather than a
+          before/after wiper. There are no before/after pairs in this trade, and
+          faking one would mean pairing two unrelated photographs.
+
+     NEVER hand-edit index.html. Edit this file or site.config.js and re-run. -->
+
+<style>
+/* Per-project geometry only. Colour and type stay with the art direction. */
+
+/* The AAA logo is a 2.5:1 lockup, not a square badge. The golden .hero-logo is
+   a 1:1 box, which would leave 40% of its height as dead transparent space and
+   push the headline down the fold. */
+.hero-logo{aspect-ratio:2.5/1}
+
+/* .zig-media is built around a 4/5 portrait video. These are architectural
+   elevations shot landscape - forcing them into 4/5 crops the building out. */
+.zig-shot{width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover}
+@media(max-width:680px){.zig-shot{aspect-ratio:4/3}}
+
+/* The float is an email float, not WhatsApp, so it takes the brand colour
+   rather than WhatsApp green. Real alpha, no blend modes. */
+.wa{background:var(--brand);box-shadow:0 10px 30px rgba(var(--brand-rgb),.42)}
+.wa svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.wa::after{border-color:var(--brand)}
+
+/* Hero video crossfade. The incoming clip is the one that fades, and it sits
+   strictly above the outgoing clip - never fade the outgoing one out, or the
+   background shows through the middle of the transition. */
+.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;z-index:0;transition:opacity 900ms ease-in-out;background:var(--ink-deep)}
+.hero-vid.under{opacity:1;z-index:1}
+.hero-vid.on{opacity:1;z-index:2}
+@media(prefers-reduced-motion:reduce){
+  /* Never display:none the hero - that reads as broken, not calm. The clip
+     stays on screen, it just does not play or cycle. */
+  .hero-vid{transition:none}
+}
+
+/* Accreditation marks in the footer. The source artwork is JPEG on white, so
+   on the dark footer they take a deliberate white plate rather than reading as
+   stray boxes. Brand marks keep their own colour, never tinted by the art
+   direction. NOTE: duplicated in buildout.js sharedCss(), because the homepage
+   uses its own inline <style> and never loads /assets/site.css. */
+.accred-logos{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.accred-logos img{height:44px;width:auto;background:#fff;border-radius:6px;padding:5px 7px}
+.accred p{margin:0;font-size:12.4px;line-height:1.55}
+/* Address sits in a contact row that is not a link, so it wraps as body text. */
+.contact-row .addr{font-weight:400;font-size:14px;line-height:1.5;display:block}
+
+/* .socials svg is filled, because the kit wrote it for solid brand marks.
+   The LinkedIn mark is solid so it is fine; a stroked Lucide mail icon in that
+   slot renders as a black rectangle, because the CSS fill beats the SVG
+   attribute. Hence the override below. */
+.socials a[data-track="email"] svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Advanced Automated Access Ltd home">
+      <span class="logo-mark" style="background-image:var(--a-mark-webp)" role="img" aria-label="Advanced Automated Access Ltd logo"></span>
+      <span class="brand-txt">
+        <b>AAA</b>
+        <span>Automated Access</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/advanced-automated-access-v2/services/">Products</a>
+      <a href="/advanced-automated-access-v2/projects/">Projects</a>
+      <a href="/advanced-automated-access-v2/our-work/">Our Work</a>
+      <a href="/advanced-automated-access-v2/servicing-repair/">Servicing</a>
+      <a href="/advanced-automated-access-v2/about/">About</a>
+      <a href="/advanced-automated-access-v2/areas-we-cover/">Areas</a>
+      <a href="/advanced-automated-access-v2/contact/">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-call" href="tel:+441277812472" data-track="call">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="lbl">01277 812472</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MOBILE DRAWER ================= -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="drawer-top">
+    <a class="brand" href="#top">
+      <span class="logo-mark" style="background-image:var(--a-mark-webp)" aria-hidden="true"></span>
+      <span class="brand-txt"><b>AAA</b><span>Automated Access</span></span>
+    </a>
+    <button class="burger" id="closeDrawer" aria-label="Close menu" style="display:flex">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="/advanced-automated-access-v2/services/">Products <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    <a href="/advanced-automated-access-v2/projects/">Projects <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    <a href="/advanced-automated-access-v2/our-work/">Our Work <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    <a href="/advanced-automated-access-v2/servicing-repair/">Servicing <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    <a href="/advanced-automated-access-v2/about/">About <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    <a href="/advanced-automated-access-v2/areas-we-cover/">Areas <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    <a href="/advanced-automated-access-v2/contact/">Contact <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  </nav>
+  <div class="drawer-foot">
+    <a class="btn btn-primary btn-block" href="tel:+441277812472" data-track="call">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call 01277 812472
+    </a>
+    <a class="btn btn-ghost btn-block" href="mailto:info@aaauk.co.uk?subject=AAA%20Website%20Enquiry" data-track="email">Email the office</a>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero s-dark" id="top">
+  <!-- HERO MEDIA: swap the slides below for a single <video class="hero-video" autoplay muted loop playsinline poster="..."> when the client sends footage. -->
+  <!-- HERO MEDIA: three clips of the service vehicle at real projects, crossfading
+       on a loop. Served as real files, never base64 - a client build must let the
+       browser range-seek, and inlining video is what made the Stormproof hero take
+       49 seconds to become usable. -->
+  <div class="hero-media" id="heroMedia">
+    <video class="hero-vid on" id="heroVid1" muted playsinline loop
+      preload="auto" poster="/advanced-automated-access-v2/media/hero-1-poster.webp"
+      aria-hidden="true" tabindex="-1">
+      <source src="/advanced-automated-access-v2/media/hero-1.mp4" type="video/mp4">
+    </video>
+    <video class="hero-vid" id="heroVid2" muted playsinline loop
+      preload="metadata" poster="/advanced-automated-access-v2/media/hero-2-poster.webp"
+      aria-hidden="true" tabindex="-1">
+      <source src="/advanced-automated-access-v2/media/hero-2.mp4" type="video/mp4">
+    </video>
+    <video class="hero-vid" id="heroVid3" muted playsinline loop
+      preload="metadata" poster="/advanced-automated-access-v2/media/hero-3-poster.webp"
+      aria-hidden="true" tabindex="-1">
+      <source src="/advanced-automated-access-v2/media/hero-3.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-scrim"></div>
+
+  <div class="hero-in">
+    <span class="hero-logo logo-mark" style="background-image:var(--a-logo-webp)" role="img" aria-label="Advanced Automated Access Ltd"></span>
+    <h1>Aluminium glazing and <em>automatic entrances</em> for commercial buildings</h1>
+    <p class="hero-sub">Curtain walling, windows, doors, shopfronts, automatic door operators and roller shutters. Designed, manufactured, installed and maintained by one contractor.</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#contact">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+        Send us your drawings
+      </a>
+      <a class="btn btn-ghost" href="tel:+441277812472" data-track="call">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        01277 812472
+      </a>
+    </div>
+    <div class="hero-strip">
+      <span class="hero-chip"><svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Essex based, working UK wide</span>
+      <span class="hero-chip"><svg class="icon" viewBox="0 0 24 24"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg>Designed, made and installed in house</span>
+      <span class="hero-chip opt"><svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/></svg>Servicing and repair contracts</span>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots" aria-hidden="true"></div>
+</section>
+
+<!-- ================= TRUST ================= -->
+<section class="trust s-dark">
+  <div class="wrap" style="padding-inline:0">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <b>Essex factory, UK wide</b><span>Our own works on Canvey Island, with engineers covering the whole country</span>
+      </div>
+      <div class="trust-item">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg>
+        <b>Our own factory</b><span>Design office and aluminium fabrication under one roof</span>
+      </div>
+      <div class="trust-item">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>
+        <b>Commercial and industrial</b><span>Retail, offices, education, healthcare and industrial units</span>
+      </div>
+      <div class="trust-item">
+        <svg class="icon" viewBox="0 0 24 24"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+        <b>CHAS Elite and Constructionline</b><span>CHAS SSIP, Constructionline Silver and ADIA member 100104</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="sec s-light" id="services">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="eyebrow">What we do</span>
+      <h2 class="title">Aluminium, entrances and access</h2>
+      <p class="lede">Everything from a full curtain walled elevation to a single shutter service visit, handled by the firm that made it.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <div class="svc-ico"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18"/><path d="M3 12h18"/></svg></div>
+        <h3>Aluminium Curtain Walling</h3>
+        <p>Curtain wall set out from the architect drawings, made up and installed to the main contractor programme.</p>
+      </article>
+      <article class="svc rv">
+        <div class="svc-ico"><svg class="icon" viewBox="0 0 24 24"><path d="M11 20H2"/><path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z"/><path d="M11 4H8a2 2 0 0 0-2 2v14"/><path d="M14 12h.01"/><path d="M22 20h-3"/></svg></div>
+        <h3>Aluminium Windows and Doors</h3>
+        <p>Commercial window and door sets made to size, from a single replacement to a full elevation.</p>
+      </article>
+      <article class="svc rv">
+        <div class="svc-ico"><svg class="icon" viewBox="0 0 24 24"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg></div>
+        <h3>Shopfronts, Canopies and Brise Soleil</h3>
+        <p>Shopfront glazing, glass canopies and solar shading, detailed so the frontage matches what was drawn.</p>
+      </article>
+      <article class="svc rv">
+        <div class="svc-ico"><svg class="icon" viewBox="0 0 24 24"><path d="m9 7-5 5 5 5"/><path d="m15 7 5 5-5 5"/></svg></div>
+        <h3>Automatic Door Systems</h3>
+        <p>Sliding, swing and telescopic automatic doors supplied, installed, commissioned and handed over ready for use.</p>
+      </article>
+      <article class="svc rv">
+        <div class="svc-ico"><svg class="icon" viewBox="0 0 24 24"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg></div>
+        <h3>Roller Shutters and Steel Doors</h3>
+        <p>Security shutters, industrial doors and steel doorsets for loading bays, service yards and plant rooms.</p>
+      </article>
+      <article class="svc rv">
+        <div class="svc-ico"><svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/></svg></div>
+        <h3>Servicing, Repair and Maintenance</h3>
+        <p>Planned maintenance visits and reactive call outs on automatic doors, manual doors and shutters.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS (the transformations slot) =================
+     The golden body carries a before/after wiper here. This trade has no
+     before/after pairs, so the same zig-zag rhythm carries three real contracts
+     instead. Swap a .zig-shot for a <video> exactly as the kit describes. -->
+<section class="sec trans s-dark" id="transformations">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="eyebrow">Selected projects</span>
+      <h2 class="title">Recent contracts</h2>
+      <p class="lede">Three of the buildings behind the photographs. Every shot on this page is our own work.</p>
+    </div>
+    <div class="zig">
+
+      <article class="zig-row rv">
+        <div class="zig-media">
+          <img class="zig-shot" loading="lazy" src="/advanced-automated-access-v2/media/home-6.webp" alt="Arnold Clark Motorstore in Wolverhampton with a bronze aluminium glazed frontage wrapping the corner of the showroom">
+        </div>
+        <div class="zig-copy">
+          <span class="num">Project 01</span>
+          <h3>Arnold Clark Motorstore, Wolverhampton</h3>
+          <p>A car showroom glazed on two elevations in bronze anodised aluminium, with the frames set out so the mullion lines run unbroken around the corner return. The entrance doors and the full height showroom screens went in as one package.</p>
+          <div class="zig-tags"><span>Comar 6 curtain wall</span><span>Comar 5Pi windows</span><span>Comar 7 doors</span><span>EMSL automatic sliding</span></div>
+        </div>
+      </article>
+
+      <article class="zig-row rv">
+        <div class="zig-media">
+          <img class="zig-shot" loading="lazy" src="/advanced-automated-access-v2/media/home-7.webp" alt="Finished Costa drive through unit with a curved dark standing seam roof and a crimson framed glazed frontage">
+        </div>
+        <div class="zig-copy">
+          <span class="num">Project 02</span>
+          <h3>Costa drive through unit</h3>
+          <p>A curved roadside unit where the whole customer facing elevation is glass. The crimson framed screens and the glazed return were made to follow the curve of the building rather than squared off against it, and the entrance was fitted out to suit the drive through layout.</p>
+          <div class="zig-tags"><span>Shopfront glazing</span><span>Curved elevation</span><span>Entrance doors</span><span>Retail fit-out</span></div>
+        </div>
+      </article>
+
+      <article class="zig-row rv">
+        <div class="zig-media">
+          <img class="zig-shot" loading="lazy" src="/advanced-automated-access-v2/media/home-8.webp" alt="Morrisons store frontage at Little Clacton with full height glazing and green store branding above the entrance">
+        </div>
+        <div class="zig-copy">
+          <span class="num">Project 03</span>
+          <h3>Morrisons, Little Clacton</h3>
+          <p>A supermarket frontage glazed from slab to fascia, with the automatic entrance and lobby doors supplied and commissioned as part of the same package. Trading hours meant the installation had to be sequenced around the store staying open.</p>
+          <div class="zig-tags"><span>Shopfront glazing</span><span>Automatic entrance</span><span>Lobby doors</span><span>Trading store</span></div>
+        </div>
+      </article>
+
+    </div>
+    <div class="center" style="margin-top:34px">
+      <p class="lede" style="font-size:13.5px">Arnold Clark Wolverhampton was built for APP Construction on a scheme by Unwin Jones Partnership. See all <a href="/advanced-automated-access-v2/projects/" style="color:var(--accent)">69 recorded projects</a>, each with its architect, main contractor and the systems used.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="sec s-tint" id="gallery">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="eyebrow">Our work</span>
+      <h2 class="title">Project photographs</h2>
+      <p class="lede">Curtain walling, shopfronts, automatic entrances, shutters and steel doorsets on live commercial sites.</p>
+    </div>
+    <div class="gal rv" id="gal">
+      <figure class="big"><img loading="lazy" src="/advanced-automated-access-v2/media/home-9.webp" alt="Single storey commercial building glazed in teal tinted curtain walling with plant ductwork on the forecourt"><figcaption>Curtain walled commercial unit</figcaption></figure>
+      <figure><img loading="lazy" src="/advanced-automated-access-v2/media/home-10.webp" alt="Safestore self storage building with aluminium windows and a glazed ground floor entrance"><figcaption>Self storage frontage</figcaption></figure>
+      <figure><img loading="lazy" src="/advanced-automated-access-v2/media/home-11.webp" alt="Grey clad industrial unit with a run of aluminium windows and a glazed personnel entrance"><figcaption>Industrial unit windows and entrance</figcaption></figure>
+      <figure><img loading="lazy" src="/advanced-automated-access-v2/media/home-12.webp" alt="Blue and grey clad commercial building under construction with the aluminium window frames installed"><figcaption>Windows installed during the build</figcaption></figure>
+      <figure><img loading="lazy" src="/advanced-automated-access-v2/media/home-13.webp" alt="Health centre elevation with blue brise soleil louvres above a band of aluminium windows"><figcaption>Health centre brise soleil</figcaption></figure>
+      <figure class="big"><img loading="lazy" src="/advanced-automated-access-v2/media/home-14.webp" alt="Two storey glazed office corner with a full height curtain walled stairwell"><figcaption>Glazed office corner and stairwell</figcaption></figure>
+      <figure><img loading="lazy" src="/advanced-automated-access-v2/media/home-15.webp" alt="Automatic swing double doors with an overhead operator fitted in a building lobby"><figcaption>Automatic swing doors</figcaption></figure>
+      <figure><img loading="lazy" src="/advanced-automated-access-v2/media/home-16.webp" alt="Shurgard self storage frontage with red and white cladding and a glazed reception entrance"><figcaption>Self storage reception entrance</figcaption></figure>
+      <figure><img loading="lazy" src="/advanced-automated-access-v2/media/home-17.webp" alt="Long bronze glazed elevation of a car showroom reflecting the sky"><figcaption>Showroom curtain walling</figcaption></figure>
+      <figure><img loading="lazy" src="/advanced-automated-access-v2/media/home-18.webp" alt="Interior view of full height showroom glazing with the bronze mullions running floor to ceiling"><figcaption>Full height showroom screens</figcaption></figure>
+      <figure class="more"><img loading="lazy" src="/advanced-automated-access-v2/media/home-19.webp" alt="Glazed retail frontage with a crimson framed column beside the entrance"><figcaption>Retail frontage and entrance</figcaption></figure>
+      <figure class="more"><img loading="lazy" src="/advanced-automated-access-v2/media/home-20.webp" alt="Interior of a steel framed unit during construction with the window opening formed and ready for glazing"><figcaption>Openings formed ready for glazing</figcaption></figure>
+      <figure class="more"><img loading="lazy" src="/advanced-automated-access-v2/media/home-21.webp" alt="Supermarket glazed frontage reflecting the car park and the sky"><figcaption>Supermarket frontage</figcaption></figure>
+      <figure class="more"><img loading="lazy" src="/advanced-automated-access-v2/media/home-22.webp" alt="Dark grey supermarket elevation with a run of aluminium windows above the car park"><figcaption>Aluminium window run</figcaption></figure>
+      <figure class="more"><img loading="lazy" src="/advanced-automated-access-v2/media/home-23.webp" alt="Decathlon store entrance with automatic sliding doors under the store sign"><figcaption>Retail automatic entrance</figcaption></figure>
+      <figure class="more"><img loading="lazy" src="/advanced-automated-access-v2/media/home-24.webp" alt="Currys PC World store entrance with automatic sliding doors and a glazed lobby"><figcaption>Automatic sliding entrance</figcaption></figure>
+      <figure class="more"><img loading="lazy" src="/advanced-automated-access-v2/media/home-25.webp" alt="Automatic sliding lobby doors seen from inside a store"><figcaption>Lobby sliding doors</figcaption></figure>
+      <figure class="more"><img loading="lazy" src="/advanced-automated-access-v2/media/home-26.webp" alt="Automatic sliding entrance at the Victor Hugo passenger terminal under the welcome sign"><figcaption>Terminal automatic entrance</figcaption></figure>
+      <figure class="more"><img loading="lazy" src="/advanced-automated-access-v2/media/home-27.webp" alt="Blue framed double doors with vision panels set into a brick opening"><figcaption>Doorset in a brick opening</figcaption></figure>
+      <figure class="more"><img loading="lazy" src="/advanced-automated-access-v2/media/home-28.webp" alt="Timber faced fire exit double doors with push bars and a red kick plate"><figcaption>Fire exit doorset</figcaption></figure>
+      <!-- Was about1 until the van photographs took that slot. Too good an
+           in-progress shot to drop off the page entirely. -->
+      <figure class="more"><img loading="lazy" src="/advanced-automated-access-v2/media/home-29.webp" alt="Curtain wall framing being installed into a brick opening from a scissor lift"><figcaption>Curtain wall going in</figcaption></figure>
+    </div>
+
+    <div class="work-cta rv">
+      <button class="btn btn-primary" id="workOpen" type="button">
+        <svg class="icon" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        View all our work
+      </button>
+      <div class="work-count">
+        <svg class="icon" viewBox="0 0 24 24" style="width:15px;height:15px"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        <span id="workCount">21</span> project photographs
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="sec why s-light" id="why">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="eyebrow">Why choose us</span>
+      <h2 class="title">Made, fitted and maintained by one firm</h2>
+      <p class="lede">Most glazing packages pass through three companies before they reach site. This one does not.</p>
+    </div>
+    <div class="why-grid">
+      <article class="why-card rv">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg>
+        <h3>Made and fitted by the same firm</h3>
+        <p>The design office and the fabrication sit under one roof, so a site query is answered by the people who made the frame rather than passed down a supply chain.</p>
+      </article>
+      <article class="why-card rv">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="m9 15 2 2 4-4"/></svg>
+        <h3>Built around the programme</h3>
+        <p>Survey, fabrication and delivery planned back from your dates, so the glazing lands when the building is ready for it and does not hold up the follow on trades.</p>
+      </article>
+      <article class="why-card rv">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+        <h3>Automatic doors done properly</h3>
+        <p>Operators set up, safety sensors proved and the door handed over working, with the EN 16005 paperwork the building needs at handover.</p>
+      </article>
+      <article class="why-card rv">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+        <h3>One contractor, start to maintenance</h3>
+        <p>The firm that designed and installed it is the firm that services it, so nobody spends a fortnight arguing about whose part has failed.</p>
+      </article>
+      <article class="why-card rv">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+        <h3>Commercial, retail and industrial</h3>
+        <p>Retail units, offices, education, healthcare and industrial buildings, plus the small works that keep them running.</p>
+      </article>
+      <article class="why-card rv">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M14 6a6 6 0 0 1 6 6v3"/><path d="M4 15v-3a6 6 0 0 1 6-6"/><rect x="2" y="15" width="20" height="4" rx="1"/></svg>
+        <h3>Engineers, not just fitters</h3>
+        <p>Faults traced to the cause on site rather than swapped part by part, which is what keeps a call out down to a single visit.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="sec s-light" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-media rv">
+        <div class="main"><img loading="lazy" src="/advanced-automated-access-v2/media/home-30.webp" alt="An aerial view of the Arnold Clark Motorstore in Wolverhampton, its full glazed elevation installed by Advanced Automated Access, with a company service vehicle parked outside"></div>
+        <div class="inset"><img loading="lazy" src="/advanced-automated-access-v2/media/home-31.webp" alt="An Advanced Automated Access service vehicle liveried for shop fronts, automatic doors, roller shutters, service and maintenance and curtain walling"></div>
+      </div>
+      <div class="about-copy rv">
+        <span class="eyebrow">About us</span>
+        <h2>Advanced Automated Access Ltd</h2>
+        <p>An aluminium and automatic access contractor based on Canvey Island in Essex, working UK wide on commercial, retail, education and healthcare buildings. Curtain walling, windows, doors, shopfronts, automatic entrances and shutters are drawn, made and installed by the same business.</p>
+        <p>That matters most when something goes wrong. A frame made in house can be corrected in house, and a door commissioned by our own engineer is a door those engineers already know when it comes up for a service visit two years later.</p>
+        <p>We have been trading since 2008 and our team carries a combined knowledge of over a hundred years in the trade. The drawing office, the 10,000 sq ft factory and our own powder coating paintline are all under one roof, which is why we can respond when a specification changes and why we deliver faster to market than our competition.</p>
+        <div class="about-sign">
+          <span class="logo-mark logo-tile" style="background-image:var(--a-mark-webp)" aria-hidden="true"></span>
+          <div>
+            <b>Richard Bloomfield</b>
+            <span>Advanced Automated Access Ltd</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AREAS =================
+     Background is the Arnold Clark Wolverhampton elevation: a wide establishing
+     shot of finished work, the same job a hero slide does. The scrim over it is
+     heavy on purpose - this band is a text panel first and a picture second. -->
+<section class="sec areas s-brand" id="areas">
+  <div class="areas-bg" style="background-image:var(--a-areas-webp)" role="img" aria-label="The long bronze glazed elevation of the Arnold Clark Motorstore in Wolverhampton"></div>
+  <div class="areas-scrim"></div>
+  <div class="wrap">
+    <div class="area-wrap">
+      <div class="rv">
+        <span class="eyebrow">Where we work</span>
+        <h2 class="title">Essex based, working across the UK</h2>
+        <p class="lede">We work UK wide. The factory, drawing office and paintline are on Canvey Island in Essex, and our engineers are based throughout the country. More than half the projects on this site are outside the South East, from Wolverhampton and Stoke-on-Trent to Crewe, Trafford Park, Lincoln, Portsmouth and Plymstock.</p>
+        <div class="hero-btns" style="justify-content:flex-start;margin-top:24px">
+          <a class="btn btn-primary" href="/advanced-automated-access-v2/areas-we-cover/">See the areas we cover</a>
+        </div>
+      </div>
+      <div class="chips rv">
+        <span class="chip core"><svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Canvey Island</span>
+        <span class="chip"><svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Essex</span>
+        <span class="chip"><svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>London</span>
+        <span class="chip"><svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>The South East</span>
+        <span class="chip"><svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Hertfordshire</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="sec s-tint" id="contact">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="title">Send us the drawings</h2>
+      <p class="lede">Fill this in and it comes straight through to the office. If you have drawings or a schedule, say so and we will come back for them.</p>
+    </div>
+    <div class="form-grid">
+      <div class="contact-list rv">
+        <a class="contact-row" href="tel:+441277812472" data-track="call">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><small>Call the office</small><b>01277 812472</b></div>
+        </a>
+        <a class="contact-row" href="mailto:info@aaauk.co.uk?subject=AAA%20Website%20Enquiry" data-track="email">
+          <svg class="icon" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <div><small>Email</small><b>info@aaauk.co.uk</b></div>
+        </a>
+        <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><small>Workshop and office</small><b class="addr">Unit 25 Skylark House, Fenttiman Road, Canvey Island, SS8 0EQ</b></div>
+        </div>
+        <a class="contact-row" href="https://uk.linkedin.com/company/advanced-automated-access-ltd" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <div><small>LinkedIn</small><b>See our latest projects</b></div>
+        </a>
+        <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div><small>Opening hours</small><b>Monday to Friday, 8am to 6pm</b></div>
+        </div>
+      </div>
+
+      <form id="quoteForm" class="rv" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="5b27b11b-45c3-4a45-a076-ad96804dfc4f">
+        <input type="hidden" name="subject" value="AAA Website Enquiry">
+        <input type="hidden" name="from_name" value="Advanced Automated Access Ltd website">
+        <!-- Web3Forms honeypot. Bots fill it, people never see it. -->
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+        <div class="f2">
+          <label class="field"><span>Your name</span><input type="text" name="name" required autocomplete="name" placeholder="Jane Smith"></label>
+          <label class="field"><span>Phone</span><input type="tel" name="phone" required autocomplete="tel" placeholder="01277 000000"></label>
+        </div>
+        <div class="f2">
+          <label class="field"><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="jane@company.co.uk"></label>
+          <label class="field"><span>Company</span><input type="text" name="company" autocomplete="organization" placeholder="Main contractor or client"></label>
+        </div>
+        <label class="field"><span>What do you need</span>
+          <select name="enquiry">
+            <option>Aluminium curtain walling</option>
+            <option>Aluminium windows and doors</option>
+            <option>Shopfronts, canopies and brise soleil</option>
+            <option>Automatic door systems</option>
+            <option>Roller shutters and steel doors</option>
+            <option>Servicing, repair and maintenance</option>
+            <option>Breakdown, a door is not working</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label class="field"><span>Site address and postcode</span><input type="text" name="site" autocomplete="postal-code" placeholder="Site town and postcode"></label>
+        <label class="field"><span>Tell us about the package</span><textarea name="details" placeholder="Rough size of the elevation or the number of doors, the programme dates and anything already drawn."></textarea></label>
+        <button class="btn btn-primary btn-block" type="submit" id="quoteSend">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+          Send enquiry
+        </button>
+        <p class="form-note" id="quoteNote" role="status" aria-live="polite">Goes straight to the office. We normally come back the same working day.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="sec cta s-dark">
+  <div class="cta-bg" style="background-image:var(--a-hero2-webp)"></div>
+  <div class="cta-scrim"></div>
+  <div class="wrap rv">
+    <h2>Got a package to price</h2>
+    <p>Send the drawings or a schedule of doors and you will get a straight answer on cost and lead time. Broken door on site, ring the office and get an engineer booked in.</p>
+    <div class="hero-btns">
+      <a class="btn btn-cyan" href="tel:+441277812472" data-track="call">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 01277 812472
+      </a>
+      <a class="btn btn-ghost" href="mailto:info@aaauk.co.uk?subject=AAA%20Website%20Enquiry" data-track="email">
+        <svg class="icon" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Email the office
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot s-dark">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="logo-mark" style="background-image:var(--a-mark-webp)" role="img" aria-label="Advanced Automated Access Ltd"></span>
+        <p>Design, supply, installation and maintenance of aluminium curtain walling, windows, doors and automatic doors. Commercial, retail and industrial buildings, from Essex outwards.</p>
+        <div class="socials">
+          <a href="https://uk.linkedin.com/company/advanced-automated-access-ltd" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:info@aaauk.co.uk?subject=AAA%20Website%20Enquiry" aria-label="Email us" data-track="email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/advanced-automated-access-v2/services/aluminium-curtain-walling/">Aluminium curtain walling</a></li>
+          <li><a href="/advanced-automated-access-v2/services/aluminium-windows-and-doors/">Aluminium windows and doors</a></li>
+          <li><a href="/advanced-automated-access-v2/services/shopfronts-canopies-and-brise-soleil/">Shopfronts and canopies</a></li>
+          <li><a href="/advanced-automated-access-v2/services/automatic-door-systems/">Automatic door systems</a></li>
+          <li><a href="/advanced-automated-access-v2/services/roller-shutters/">Roller shutters and steel doors</a></li>
+          <li><a href="/advanced-automated-access-v2/services/automatic-door-servicing-and-repair/">Servicing and repair</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sectors</h4>
+        <ul>
+          <li>Retail</li>
+          <li>Commercial and offices</li>
+          <li>Education</li>
+          <li>Healthcare</li>
+          <li>Industrial and small works</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="tel:+441277812472" data-track="call">01277 812472</a></li>
+          <li><a href="mailto:info@aaauk.co.uk?subject=AAA%20Website%20Enquiry" data-track="email">info@aaauk.co.uk</a></li>
+          <li>Unit 25 Skylark House, Fenttiman Road, Canvey Island, SS8 0EQ</li>
+          <li><a href="https://uk.linkedin.com/company/advanced-automated-access-ltd" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+        <div class="accred">
+          <div class="accred-logos">
+            <img loading="lazy" src="/advanced-automated-access-v2/media/aaa-chas.webp" alt="CHAS Elite and CHAS SSIP accreditation, membership CHAS-110047">
+            <img loading="lazy" src="/advanced-automated-access-v2/media/constructionline.webp" alt="Constructionline Silver member, registration 136785">
+          </div>
+          <p>CHAS Elite and CHAS SSIP, membership CHAS-110047. Constructionline Silver 136785. ADIA member 100104. Approved Comar and Senior Architectural Systems fabricator, approved Assa Abloy and record installer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <small>Copyright 2026 Advanced Automated Access Ltd. All rights reserved.</small>
+      <small>Website by <a href="https://innov8workflows.co.uk" target="_blank" rel="noopener">Innov8 Workflows</a></small>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= EMAIL FLOAT =================
+     The golden body puts a WhatsApp float here. AAA is a B2B contractor with a
+     landline and no mobile supplied, so it is an email float instead. -->
+<a class="wa" href="mailto:info@aaauk.co.uk?subject=AAA%20Website%20Enquiry" aria-label="Email Advanced Automated Access Ltd" data-track="email">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+</a>
+
+<!-- ================= OUR WORK (full panel) ================= -->
+<div class="work" id="work" role="dialog" aria-modal="true" aria-labelledby="workTitle" aria-hidden="true">
+  <header class="work-top">
+    <div class="work-top-in">
+      <div class="work-id">
+        <span class="logo-mark" style="background-image:var(--a-mark-webp)" aria-hidden="true"></span>
+        <div>
+          <b id="workTitle">Our Work</b>
+          <span>Aluminium glazing, automatic entrances and access across the UK</span>
+        </div>
+      </div>
+      <button class="work-close" id="workClose" type="button">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        <span class="lbl">Close</span>
+      </button>
+    </div>
+  </header>
+  <div class="work-body">
+    <div class="work-grid" id="workGrid"></div>
+    <div class="work-foot">
+      <a class="btn btn-primary" href="#contact" id="workQuote">Get your package priced</a>
+      <a class="btn btn-ghost" href="tel:+441277812472" data-track="call" style="color:#EAF0F2;border-color:rgba(255,255,255,.26)">01277 812472</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project photo">
+  <button class="lb-close" id="lbClose" aria-label="Close"><svg class="icon" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  <button class="lb-nav prev" id="lbPrev" aria-label="Previous"><svg class="icon" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav next" id="lbNext" aria-label="Next"><svg class="icon" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var EMAIL = "info@aaauk.co.uk";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- nav ---------- */
+  var nav = document.getElementById("nav");
+  var onScroll = function(){ nav.classList.toggle("solid", window.scrollY > 40); };
+  onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
+
+  var drawer = document.getElementById("drawer"), burger = document.getElementById("burger");
+  var openD = function(o){
+    drawer.classList.toggle("open", o);
+    burger.setAttribute("aria-expanded", o ? "true" : "false");
+    document.body.style.overflow = o ? "hidden" : "";
+  };
+  burger.addEventListener("click", function(){ openD(true); });
+  document.getElementById("closeDrawer").addEventListener("click", function(){ openD(false); });
+  drawer.querySelectorAll("nav a").forEach(function(a){ a.addEventListener("click", function(){ openD(false); }); });
+
+  /* ---------- hero: three clips crossfading on a loop ----------
+     Only the incoming clip fades, and it is given the higher z-index, so the
+     outgoing clip stays fully opaque underneath until the fade has finished. */
+  var vids = [1,2,3].map(function(n){ return document.getElementById("heroVid"+n); }).filter(Boolean);
+  var dotsBox = document.getElementById("heroDots");
+  var hv = 0, heroTimer = null;
+  var FADE = 900;
+
+  if (vids.length){
+    vids.forEach(function(v){ v.muted = true; v.playsInline = true; });
+
+    var show = function(next){
+      if (next === hv) return;
+      var cur = vids[hv], nxt = vids[next];
+      try { nxt.currentTime = 0; } catch(e){}
+      var p = nxt.play(); if (p && p.catch) p.catch(function(){});
+      cur.classList.remove("on"); cur.classList.add("under");
+      nxt.classList.add("on");
+      setTimeout(function(){
+        cur.classList.remove("under");
+        try { cur.pause(); } catch(e){}
+      }, FADE);
+      hv = next;
+      if (dotsBox) dotsBox.querySelectorAll("button").forEach(function(b,i){ b.classList.toggle("on", i === hv); });
+    };
+
+    var queue = function(){
+      clearTimeout(heroTimer);
+      var v = vids[hv];
+      var dur = (v && v.duration && isFinite(v.duration)) ? v.duration : 5;
+      heroTimer = setTimeout(function(){ show((hv + 1) % vids.length); queue(); },
+        Math.max(1200, (dur * 1000) - FADE));
+    };
+
+    if (dotsBox && vids.length > 1){
+      vids.forEach(function(_, i){
+        var b = document.createElement("button");
+        b.type = "button"; b.className = i === 0 ? "on" : "";
+        b.setAttribute("aria-label", "Clip " + (i+1));
+        b.addEventListener("click", function(){ show(i); queue(); });
+        dotsBox.appendChild(b);
+      });
+    }
+
+    /* NEVER gate playback on prefers-reduced-motion. A hero that does not run
+       reads as broken, and that is the most expensive recurring bug in this kit.
+       The preference is honoured in CSS instead: under reduce the crossfade is
+       an instant cut rather than an animated fade. */
+    var armRetry = function(){
+      var retry = function(){
+        var q = vids[hv].play(); if (q && q.catch) q.catch(function(){});
+      };
+      ["pointerdown", "touchstart", "keydown", "scroll"].forEach(function(e){
+        window.addEventListener(e, retry, { once: true, passive: true });
+      });
+    };
+    var p0 = vids[0].play();
+    if (p0 && p0.catch) p0.catch(armRetry);   /* iOS low power, strict settings */
+
+    /* the cycle runs either way, so a blocked autoplay degrades to the posters
+       moving rather than one frozen frame */
+    if (vids[0].readyState >= 1) queue();
+    else vids[0].addEventListener("loadedmetadata", queue, { once: true });
+    setTimeout(function(){ vids.slice(1).forEach(function(v){ try { v.load(); } catch(e){} }); }, 1500);
+  }
+
+  /* ---------- before / after sliders ----------
+     None on this build - AAA has no before/after pairs. The handler stays so a
+     .ba block can be dropped into a zig row later with nothing else touched. */
+  document.querySelectorAll("[data-ba]").forEach(function(ba){
+    var drag = false;
+    var set = function(clientX){
+      var r = ba.getBoundingClientRect();
+      var p = Math.min(100, Math.max(0, ((clientX - r.left) / r.width) * 100));
+      ba.style.setProperty("--pos", p.toFixed(2) + "%");
+    };
+    var down = function(e){ drag = true; set(e.touches ? e.touches[0].clientX : e.clientX); };
+    var move = function(e){
+      if (!drag) return;
+      if (e.touches) { set(e.touches[0].clientX); }
+      else { e.preventDefault(); set(e.clientX); }
+    };
+    var up = function(){ drag = false; };
+    ba.addEventListener("mousedown", down);
+    ba.addEventListener("touchstart", down, {passive:true});
+    window.addEventListener("mousemove", move);
+    window.addEventListener("touchmove", move, {passive:true});
+    window.addEventListener("mouseup", up);
+    window.addEventListener("touchend", up);
+    ba.addEventListener("click", function(e){ set(e.clientX); });
+  });
+
+  /* ---------- gallery, Our Work panel and lightbox ---------- */
+  var gal = document.getElementById("gal");
+  var galFigs = Array.prototype.slice.call(gal.querySelectorAll("figure"));
+  var figs = galFigs.map(function(f){ return f.querySelector("img"); });
+  var countEl = document.getElementById("workCount");
+  if (countEl) countEl.textContent = figs.length;
+
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg"), li = 0;
+  var work = document.getElementById("work"), workGrid = document.getElementById("workGrid");
+  var lockScroll = function(on){ document.body.style.overflow = on ? "hidden" : ""; };
+
+  var openLb = function(i){
+    li = (i + figs.length) % figs.length;
+    lbImg.src = figs[li].src;
+    lbImg.alt = figs[li].alt;
+    lb.classList.add("open");
+    lockScroll(true);
+  };
+  var closeLb = function(){
+    lb.classList.remove("open");
+    // the Our Work panel is its own scroll container, so only release the page
+    // scroll lock if that panel is not still open behind the lightbox
+    lockScroll(work.classList.contains("open"));
+  };
+  galFigs.forEach(function(f, i){ f.addEventListener("click", function(){ openLb(i); }); });
+  document.getElementById("lbClose").addEventListener("click", closeLb);
+  document.getElementById("lbPrev").addEventListener("click", function(e){ e.stopPropagation(); openLb(li - 1); });
+  document.getElementById("lbNext").addEventListener("click", function(e){ e.stopPropagation(); openLb(li + 1); });
+  lb.addEventListener("click", function(e){ if (e.target === lb) closeLb(); });
+
+  /* the panel is populated once, on first open, by cloning the gallery figures.
+     Cloning copies the data URI by reference, so nothing is embedded twice. */
+  var workBuilt = false;
+  var buildWork = function(){
+    if (workBuilt) return;
+    galFigs.forEach(function(f, i){
+      var c = f.cloneNode(true);
+      c.className = "";
+      c.addEventListener("click", function(){ openLb(i); });
+      workGrid.appendChild(c);
+    });
+    workBuilt = true;
+  };
+  var openWork = function(){
+    buildWork();
+    work.classList.add("open");
+    work.setAttribute("aria-hidden", "false");
+    lockScroll(true);
+    work.querySelector(".work-body").scrollTop = 0;
+    document.getElementById("workClose").focus();
+  };
+  var closeWork = function(){
+    work.classList.remove("open");
+    work.setAttribute("aria-hidden", "true");
+    lockScroll(false);
+  };
+  document.getElementById("workOpen").addEventListener("click", openWork);
+  document.getElementById("workClose").addEventListener("click", closeWork);
+  document.getElementById("workQuote").addEventListener("click", closeWork);
+
+  document.addEventListener("keydown", function(e){
+    if (lb.classList.contains("open")){
+      if (e.key === "Escape") closeLb();
+      if (e.key === "ArrowLeft") openLb(li - 1);
+      if (e.key === "ArrowRight") openLb(li + 1);
+      return;
+    }
+    if (e.key === "Escape" && work.classList.contains("open")) closeWork();
+  });
+
+  /* ---------- contact form: Web3Forms ----------
+     action/method stay on the element so the form still posts with JS off.
+     With JS on, fetch keeps the visitor here. FormData, not JSON, so the
+     request stays CORS-simple and cannot be lost to a refused preflight. */
+  var qForm = document.getElementById("quoteForm");
+  var qNote = document.getElementById("quoteNote");
+  var qBtn = document.getElementById("quoteSend");
+
+  qForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    var f = e.target;
+    var v = function(k){ return (f.elements[k] && f.elements[k].value || "").trim(); };
+
+    var missing = ["name", "phone", "email"].filter(function(k){ return !v(k); });
+    if (missing.length){
+      var bad = f.elements[missing[0]];
+      bad.focus();
+      bad.style.borderColor = "#E4574C";
+      setTimeout(function(){ bad.style.borderColor = ""; }, 2200);
+      qNote.textContent = "Please fill in your name, phone and email.";
+      return;
+    }
+
+    var restore = qBtn.innerHTML;
+    qBtn.disabled = true;
+    qBtn.textContent = "Sending...";
+    qNote.textContent = "Sending your enquiry.";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(f)
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(j){
+      if (j && j.success){
+        f.innerHTML = '<div class="inshort" style="margin:0"><p><b>Thank you, that is with us.</b><br>' +
+          'Your enquiry has been sent to the office and we will come back to you, normally the same working day. ' +
+          'If it is urgent, or a door has broken down, please ring <a href="tel:+441277812472" data-track="call">01277 812472</a>.</p></div>';
+      } else {
+        throw new Error((j && j.message) || "Web3Forms rejected the submission");
+      }
+    })
+    .catch(function(){
+      qBtn.disabled = false;
+      qBtn.innerHTML = restore;
+      qNote.innerHTML = 'That did not send. Please ring <a href="tel:+441277812472" data-track="call">01277 812472</a> ' +
+        'or email <a href="mailto:info@aaauk.co.uk?subject=AAA%20Website%20Enquiry" data-track="email">info@aaauk.co.uk</a> and we will pick it up.';
+    });
+  });
+
+  /* ---------- pause timers while the tab is hidden ---------- */
+  document.addEventListener("visibilitychange", function(){
+    if (document.hidden){
+      clearTimeout(heroTimer);
+      vids.forEach(function(v){ try { v.pause(); } catch(e){} });
+    } else if (vids.length){
+      var p = vids[hv].play(); if (p && p.catch) p.catch(function(){});
+      queue();
+    }
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  if ("IntersectionObserver" in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, {rootMargin:"0px 0px -8% 0px", threshold:0.06});
+    document.querySelectorAll(".rv").forEach(function(el, i){
+      el.style.transitionDelay = ((i % 4) * 60) + "ms";
+      io.observe(el);
+    });
+  } else {
+    document.querySelectorAll(".rv").forEach(function(el){ el.classList.add("in"); });
+  }
+})();
+</script>
+
+<style>/* ============================================================
+   LIGHT VARIANT - project-scoped override layer
+   ============================================================
+   Built for Chris to put in front of Richard alongside the dark site.
+
+   This file touches NOTHING in ~/.claude/site-kit. It is appended after the kit
+   CSS, so equal-specificity rules win on cascade order alone. That is deliberate:
+   20+ live sites rebuild from that template and a light theme is not worth
+   risking them for.
+
+   The approach: the kit derives almost all of its dark chrome from the --ink and
+   --on-ink token families, so flipping those two families turns the navbar,
+   the mobile drawer, the footer and every .s-dark section light in one move.
+
+   What deliberately STAYS dark: the hero, the areas band and the final CTA. All
+   three sit over video or photography and carry white text, so a light scrim
+   would destroy their contrast. Keeping them dark also gives the page rhythm -
+   a light site with three dark media bands, rather than an undifferentiated
+   wash. Those scrims reference --ink-rgb, so each is pinned to a literal dark
+   value below or it would follow the flip and take the white text with it.
+
+   The new brand suits this better than the dark theme: #9A3246 scores 7.23:1 on
+   white against 2.58:1 on the dark ground.
+   ============================================================ */
+
+:root{
+  /* the ground flips light */
+  --ink:#F4F7F8;          --ink-rgb:244,247,248;
+  --ink-1:#FFFFFF;
+  --ink-2:#EAEFF1;
+  --ink-deep:#FFFFFF;     --ink-deep-rgb:255,255,255;
+
+  /* text that sits on the now-light chrome flips dark */
+  --on-ink:#131A1D;
+  --on-ink-2:#3A464C;
+  --on-ink-muted:#5A676D;
+  --on-ink-faint:#7E8A90;
+
+  /* --- pinned dark, because these sit over media and carry white text --- */
+  --cta-scrim:linear-gradient(135deg,rgba(168,47,72,.62),rgba(16,19,21,.72) 52%,rgba(46,88,113,.55)),rgba(16,19,21,.36);
+  --areas-scrim:radial-gradient(72% 100% at 10% 50%,rgba(168,47,72,.34),transparent 62%),radial-gradient(72% 100% at 92% 42%,rgba(78,122,153,.26),transparent 60%),linear-gradient(115deg,rgba(16,19,21,.90) 0%,rgba(8,9,11,.74) 50%,rgba(16,19,21,.82) 100%);
+  --areas-scrim-sm:radial-gradient(90% 60% at 20% 20%,rgba(168,47,72,.30),transparent 64%),linear-gradient(180deg,rgba(16,19,21,.90) 0%,rgba(8,9,11,.84) 58%,rgba(16,19,21,.88) 100%);
+  --band-bg:#0C1013;
+  --band-g1:#141C21;
+  --band-g2:#1E1319;
+}
+
+/* The hero scrim is a template RULE, not a token, and it is built from
+   --ink-rgb. Restate it with literal darks or the hero video loses its
+   white-text contrast entirely. */
+.hero{background:#08090B}
+.hero-scrim{
+  background:
+   linear-gradient(180deg,rgba(16,19,21,.80) 0%,rgba(16,19,21,.46) 34%,rgba(16,19,21,.72) 74%,rgba(16,19,21,1) 100%),
+   radial-gradient(120% 80% at 50% 40%,rgba(78,122,153,.10),transparent 60%);
+}
+/* .cta gets its colour from --ink, which is now light; the image and scrim sit
+   above it but pin the base so a slow image load does not flash white. */
+.cta{background:#101315}
+
+/* --- the mid-page dark surface becomes a light tint --- */
+.s-dark{
+  --bg:#F4F7F8;
+  --fg:#131A1D;
+  --fg-2:#3A464C;
+  --fg-muted:#5A676D;
+  --card:#FFFFFF;
+  --card-hi:#FFFFFF;
+  --card-line:#E2E8EB;
+  --card-line-hi:#BCC6CB;
+  --accent:var(--brand-dp);
+  --accent-2:var(--brand2-dk);
+  --chip:#FFFFFF;
+  --sh:0 2px 6px rgba(19,26,29,.06);
+  --sh-lg:0 8px 22px rgba(19,26,29,.10);
+  --ghost-line:#BAC4C9;
+}
+
+/* --- the three dark bands keep light text ---
+   These four rules take their colour from the --on-ink family, which is now
+   dark, but they sit on the hero video and the CTA image, which stay dark. Left
+   alone they render dark-on-dark and vanish. Pinned to literal light values. */
+.hero-sub{color:#CDD6DA}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.32)}
+.hero-chip{background:rgba(16,19,21,.52);border-color:rgba(255,255,255,.18);color:#E4EBED}
+.cta p{color:#CDD6DA}
+
+/* --- navbar --- */
+/* A translucent white wash over the video left the dark nav text at roughly 2:1
+   where the gradient faded. On a light theme a solid bar is both readable and
+   more honest to the style, so the nav is opaque from the top. */
+.nav::before{background:rgba(255,255,255,.96);border-bottom:1px solid #E8EDEF}
+.nav.solid::before{
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #E2E8EB;
+  box-shadow:0 6px 26px rgba(19,26,29,.08);
+}
+.brand-txt span{color:var(--brand2-dk)}
+.nav-links a::after{background:var(--brand-dp)}
+/* the burger's border and fill were rgba(255,255,255,...) - invisible on white */
+.burger{border-color:#D8E0E4;background:#F4F7F8;color:#131A1D}
+
+/* --- mobile drawer --- */
+.drawer{background:rgba(255,255,255,.98)}
+.drawer nav a{border-bottom-color:#E2E8EB}
+.drawer nav a .icon{color:var(--brand-dp)}
+.drawer .btn-ghost{border-color:#CBD5DA;color:#131A1D;background:#F4F7F8}
+.drawer .btn-ghost:hover{border-color:var(--brand-dp);color:var(--brand-dp)}
+
+/* --- footer --- */
+.foot{background:#EFF3F5;border-top:1px solid #E2E8EB}
+.foot h4{color:var(--brand2-dk)}
+.foot ul a:hover{color:var(--brand-dp)}
+.foot-bar{border-top:1px solid #DDE4E8}
+.foot-bar a{color:var(--brand-dp)}
+.socials a{background:#FFFFFF;border-color:#DDE4E8;color:#5A676D}
+.socials a:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.accred{border:1px solid #DDE4E8;background:#FFFFFF}
+/* the marks are already artwork on white, so drop the plate on a light footer */
+.accred-logos img{background:transparent;padding:0}
+
+/* --- trust strip --- */
+.trust{border-bottom:1px solid #E2E8EB}
+
+/* --- the Our Work overlay panel --- */
+.work{background:rgba(255,255,255,.98)}
+.work-top{background:rgba(255,255,255,.97);border-bottom:1px solid #E2E8EB}
+.work-close{border-color:#D8E0E4;background:#F4F7F8;color:#131A1D}
+
+/* --- reviews score / stars sit on white cards already, nothing to do --- */
+
+/* --- the sticky sidebar on generated pages --- */
+.sidecard,.sidelinks{background:#FFFFFF;border-color:#E2E8EB}
+
+/* Hero, areas and CTA keep white text on purpose - see the note at the top.
+   These are the elements the kit hardcodes to #fff, listed here so it is
+   obvious they were considered rather than missed:
+     .hero h1, .cta h2, .hero .btn-ghost, .cta .btn-ghost, .hero-dots button
+   All three bands remain dark, so all of them stay correct untouched. */
+</style>
+</body>
+</html>
