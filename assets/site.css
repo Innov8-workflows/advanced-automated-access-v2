@@ -1057,8 +1057,49 @@ html.sch-open,html.sch-open body{overflow:hidden}
 .hero{background:#08090B}
 .hero-scrim{
   background:
-   linear-gradient(180deg,rgba(16,19,21,.80) 0%,rgba(16,19,21,.46) 34%,rgba(16,19,21,.72) 74%,rgba(16,19,21,1) 100%),
-   radial-gradient(120% 80% at 50% 40%,rgba(78,122,153,.10),transparent 60%);
+   linear-gradient(180deg,rgba(16,19,21,0.8) 0%,rgba(16,19,21,0.46) 34%,rgba(16,19,21,0.72) 74%,rgba(16,19,21,1) 100%),
+   radial-gradient(120% 80% at 50% 40%,rgba(78,122,153,0.1),transparent 60%);
+}
+
+/* The sub-heading is the ONLY thing that limits how light the hero can go.
+   Measured against the real video at 1440px, worst of the three clips:
+
+     level        #CDD6DA (current)   #FFFFFF
+     0 current    5.48 pass           8.09 pass
+     1 lighter    4.21 MARGINAL       6.21 pass
+     2 lightest   3.29 FAIL           4.86 pass
+     3 barely     2.59 FAIL           3.83 marginal
+
+   #CDD6DA was a deliberate dimming for hierarchy on the DARK theme. Over a
+   lifted scrim it costs contrast and buys nothing, so every lifted level takes
+   the sub to white. That is what makes level 2 viable rather than a fail.
+   The headline and the chips pass at all four levels; the chips carry their own
+   translucent plate, so they were never the constraint. */
+html[data-hero="1"] .hero-sub,
+html[data-hero="2"] .hero-sub,
+html[data-hero="3"] .hero-sub{color:#FFFFFF}
+
+/* ---------- hero scrim levels ----------
+   Chris asked for the hero a few shades lighter. Switch with ?hero=1|2|3 on
+   the homepage; no parameter is the current look. Each step lifts the scrim
+   and therefore lowers the contrast of the white headline and the sub over
+   the video - the measured figures are in the note to Jay, not guessed.
+   Level 3 is included so the client can SEE where it stops working, not
+   because it is a recommendation. */
+html[data-hero="1"] .hero-scrim{
+  background:
+   linear-gradient(180deg,rgba(16,19,21,0.68) 0%,rgba(16,19,21,0.36) 34%,rgba(16,19,21,0.62) 74%,rgba(16,19,21,1) 100%),
+   radial-gradient(120% 80% at 50% 40%,rgba(78,122,153,0.09),transparent 60%);
+}
+html[data-hero="2"] .hero-scrim{
+  background:
+   linear-gradient(180deg,rgba(16,19,21,0.56) 0%,rgba(16,19,21,0.27) 34%,rgba(16,19,21,0.52) 74%,rgba(16,19,21,1) 100%),
+   radial-gradient(120% 80% at 50% 40%,rgba(78,122,153,0.08),transparent 60%);
+}
+html[data-hero="3"] .hero-scrim{
+  background:
+   linear-gradient(180deg,rgba(16,19,21,0.44) 0%,rgba(16,19,21,0.18) 34%,rgba(16,19,21,0.42) 74%,rgba(16,19,21,1) 100%),
+   radial-gradient(120% 80% at 50% 40%,rgba(78,122,153,0.07),transparent 60%);
 }
 /* .cta gets its colour from --ink, which is now light; the image and scrim sit
    above it but pin the base so a slow image load does not flash white. */
