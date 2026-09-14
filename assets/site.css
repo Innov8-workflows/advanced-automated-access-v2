@@ -1055,48 +1055,19 @@ html.sch-open,html.sch-open body{overflow:hidden}
    --ink-rgb. Restate it with literal darks or the hero video loses its
    white-text contrast entirely. */
 .hero{background:#08090B}
+/* Hero banner V3, chosen by Chris Egan on 2026-09-14 after comparing four
+   levels on the live video. It is the lightest of the four.
+
+   Measured at 1440px against the real video, worst of three clips:
+     headline 3.35:1 (needs 3.0, pass)   sub-heading 3.83:1 (needs 4.5)
+     ghost button 4.38:1 (needs 4.5)     chips 10.06:1 (pass)
+   The sub-heading and ghost button sit below the AA body-text bar. That was
+   explained to the client, who chose V3 anyway. The sub is white rather than
+   the original #CDD6DA, which would have measured 2.59:1 on this scrim.
+
+   The bottom stop stays at alpha 1 so the hero still meets the light trust
+   strip underneath cleanly. */
 .hero-scrim{
-  background:
-   linear-gradient(180deg,rgba(16,19,21,0.8) 0%,rgba(16,19,21,0.46) 34%,rgba(16,19,21,0.72) 74%,rgba(16,19,21,1) 100%),
-   radial-gradient(120% 80% at 50% 40%,rgba(78,122,153,0.1),transparent 60%);
-}
-
-/* The sub-heading is the ONLY thing that limits how light the hero can go.
-   Measured against the real video at 1440px, worst of the three clips:
-
-     level        #CDD6DA (current)   #FFFFFF
-     0 current    5.48 pass           8.09 pass
-     1 lighter    4.21 MARGINAL       6.21 pass
-     2 lightest   3.29 FAIL           4.86 pass
-     3 barely     2.59 FAIL           3.83 marginal
-
-   #CDD6DA was a deliberate dimming for hierarchy on the DARK theme. Over a
-   lifted scrim it costs contrast and buys nothing, so every lifted level takes
-   the sub to white. That is what makes level 2 viable rather than a fail.
-   The headline and the chips pass at all four levels; the chips carry their own
-   translucent plate, so they were never the constraint. */
-html[data-hero="1"] .hero-sub,
-html[data-hero="2"] .hero-sub,
-html[data-hero="3"] .hero-sub{color:#FFFFFF}
-
-/* ---------- hero scrim levels ----------
-   Chris asked for the hero a few shades lighter. Switch with ?hero=1|2|3 on
-   the homepage; no parameter is the current look. Each step lifts the scrim
-   and therefore lowers the contrast of the white headline and the sub over
-   the video - the measured figures are in the note to Jay, not guessed.
-   Level 3 is included so the client can SEE where it stops working, not
-   because it is a recommendation. */
-html[data-hero="1"] .hero-scrim{
-  background:
-   linear-gradient(180deg,rgba(16,19,21,0.68) 0%,rgba(16,19,21,0.36) 34%,rgba(16,19,21,0.62) 74%,rgba(16,19,21,1) 100%),
-   radial-gradient(120% 80% at 50% 40%,rgba(78,122,153,0.09),transparent 60%);
-}
-html[data-hero="2"] .hero-scrim{
-  background:
-   linear-gradient(180deg,rgba(16,19,21,0.56) 0%,rgba(16,19,21,0.27) 34%,rgba(16,19,21,0.52) 74%,rgba(16,19,21,1) 100%),
-   radial-gradient(120% 80% at 50% 40%,rgba(78,122,153,0.08),transparent 60%);
-}
-html[data-hero="3"] .hero-scrim{
   background:
    linear-gradient(180deg,rgba(16,19,21,0.44) 0%,rgba(16,19,21,0.18) 34%,rgba(16,19,21,0.42) 74%,rgba(16,19,21,1) 100%),
    radial-gradient(120% 80% at 50% 40%,rgba(78,122,153,0.07),transparent 60%);
@@ -1127,7 +1098,7 @@ html[data-hero="3"] .hero-scrim{
    These four rules take their colour from the --on-ink family, which is now
    dark, but they sit on the hero video and the CTA image, which stay dark. Left
    alone they render dark-on-dark and vanish. Pinned to literal light values. */
-.hero-sub{color:#CDD6DA}
+.hero-sub{color:#FFFFFF}
 .hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.32)}
 .hero-chip{background:rgba(16,19,21,.52);border-color:rgba(255,255,255,.18);color:#E4EBED}
 .cta p{color:#CDD6DA}
